@@ -1,0 +1,5 @@
+:START_ID;:END_ID;:TYPE
+c1;d1;lies_in
+d1;a1;lies_in
+d2;a1;lies_in
+a1;f1;lies_in
