@@ -21,7 +21,10 @@
 - hat nur Vorkenntnisse in der Benutzung digitaler Karten
 - benötigt eine Möglichkeit, sich durch eine digitale Anwendung besser über die Städte im Sauerland zu informieren
 
-### #4 Rofl, 62 Jahre
+### #4 Beyza, 52 Jahre
+-
+
+### #5 Rofl, 62 Jahre
 - Frührentner aus Gelsenkirchen
 - regt sich darüber auf, dass ihm klassische Suchmaschinen, wie Google, oftmals ungenaue oder falsche Informationen über sein räumliches Umfeld liefern
 - hat keinerlei Vorkenntnisse
