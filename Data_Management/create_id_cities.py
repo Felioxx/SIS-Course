@@ -16,4 +16,4 @@ for c in c_names:
 cities = {"C_ID":C_ID, "Name": c_names, "Geometry": c_geometry}
 
 df_cities = pd.DataFrame(cities) 
-df_cities.to_csv('Data_Management\id_cities.csv', index=False, sep = ";") 
+df_cities.to_csv('Data_Management\id_cities.csv', index=False, sep = ",") 

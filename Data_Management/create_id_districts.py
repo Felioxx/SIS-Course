@@ -16,6 +16,6 @@ for d in d_names:
 districts = {"D_ID":D_ID, "Name": d_names, "Geometry": d_geometry}
 
 df_districts = pd.DataFrame(districts) 
-df_districts.to_csv('id_districts.csv', index=False, sep = ";")
+df_districts.to_csv('Data_Management\id_districts.csv', index=False, sep = ",")
 
 # print(c_names)
