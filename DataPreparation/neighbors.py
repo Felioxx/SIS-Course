@@ -16,21 +16,24 @@
 #Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #
 ################################################################################
+
+# Tutorial source: http://www.qgistutorials.com/en/docs/find_neighbor_polygons.html
+
 from qgis.utils import iface
-from PyQt4.QtCore import QVariant
+from PyQt5.QtCore import QVariant
 
 # Replace the values below with values from your layer.
 # For example, if your identifier field is called 'XYZ', then change the line
 # below to _NAME_FIELD = 'XYZ'
-_NAME_FIELD = 'NAME'
+_NAME_FIELD = 'Name'
 # Replace the value below with the field name that you want to sum up.
 # For example, if the # field that you want to sum up is called 'VALUES', then
 # change the line below to _SUM_FIELD = 'VALUES'
-_SUM_FIELD = 'POP_EST'
+#_SUM_FIELD = 'POP_EST'
 
 # Names of the new fields to be added to the layer
-_NEW_NEIGHBORS_FIELD = 'NEIGHBORS'
-_NEW_SUM_FIELD = 'SUM'
+_NEW_NEIGHBORS_FIELD = 'Neighbors'
+#_NEW_SUM_FIELD = 'SUM'
 
 layer = iface.activeLayer()
 
@@ -38,8 +41,8 @@ layer = iface.activeLayer()
 # of the chosen field.
 layer.startEditing()
 layer.dataProvider().addAttributes(
-        [QgsField(_NEW_NEIGHBORS_FIELD, QVariant.String),
-         QgsField(_NEW_SUM_FIELD, QVariant.Int)])
+        [QgsField(_NEW_NEIGHBORS_FIELD, QVariant.String)])
+         #QgsField(_NEW_SUM_FIELD, QVariant.Int)])
 layer.updateFields()
 # Create a dictionary of all features
 feature_dict = {f.id(): f for f in layer.getFeatures()}
@@ -51,7 +54,7 @@ for f in feature_dict.values():
 
 # Loop through all features and find features that touch each feature
 for f in feature_dict.values():
-    print 'Working on %s' % f[_NAME_FIELD]
+    print('Working on %s' % f[_NAME_FIELD])
     geom = f.geometry()
     # Find all features that intersect the bounding box of the current feature.
     # We use spatial index to find the features intersecting the bounding box
@@ -60,7 +63,7 @@ for f in feature_dict.values():
     intersecting_ids = index.intersects(geom.boundingBox())
     # Initalize neighbors list and sum
     neighbors = []
-    neighbors_sum = 0
+    #neighbors_sum = 0
     for intersecting_id in intersecting_ids:
         # Look up the feature from the dictionary
         intersecting_f = feature_dict[intersecting_id]
@@ -71,11 +74,11 @@ for f in feature_dict.values():
         if (f != intersecting_f and
             not intersecting_f.geometry().disjoint(geom)):
             neighbors.append(intersecting_f[_NAME_FIELD])
-            neighbors_sum += intersecting_f[_SUM_FIELD]
+            #neighbors_sum += intersecting_f[_SUM_FIELD]
     f[_NEW_NEIGHBORS_FIELD] = ','.join(neighbors)
-    f[_NEW_SUM_FIELD] = neighbors_sum
+    #f[_NEW_SUM_FIELD] = neighbors_sum
     # Update the layer with new attribute values.
     layer.updateFeature(f)
 
 layer.commitChanges()
-print 'Processing complete.'
+print('Processing complete.')

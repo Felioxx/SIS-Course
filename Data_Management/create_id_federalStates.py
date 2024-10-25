@@ -12,10 +12,10 @@ d_geometry = gdf['geometry']
 i = 1
 D_ID = []
 for c in d_names:
-    D_ID.append("D"+str(i))
+    D_ID.append("F"+str(i))
     i = i+1
 
-districts = {"D_ID": D_ID, "Name": d_names, "Geometry": d_geometry}
+districts = {"F_ID": D_ID, "Name": d_names, "Geometry": d_geometry}
 df_districts = pd.DataFrame(districts)
 
 # Konvertieren der Geometrie zu WKT (Well-Known Text) für den Export in CSV
