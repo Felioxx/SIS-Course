@@ -26,7 +26,7 @@
 - has a well-known tax office and therefore clients from all over NRW
 - only has prior knowledge of using chatbots, such as ChatGPT
 - would like to use an application to get a quick overview of her clients' regions of residence
-- 
+
 ### #5 Rofl, 62 years old
 - Early retiree from Gelsenkirchen
 - is annoyed that traditional search engines, such as Google, often provide him with inaccurate or incorrect information about his local area
