@@ -1,7 +1,7 @@
 # SIS-Course
 
 
-## User Stories
+## Personas
 
 ### #1 Anne, 22 years old
 - Geoinformatics student from Münster
