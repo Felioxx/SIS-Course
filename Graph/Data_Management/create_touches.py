@@ -2,12 +2,12 @@ import geopandas as gpd
 import csv
 import pandas as pd
 
-gdf_cities = gpd.read_file("Graph\Shapes\\cities.shp")
-df_cities = pd.read_csv("Data_Management\id_cities.csv")
-gdf_districts = gpd.read_file("Graph\Shapes\\districts.shp")
-df_districts = pd.read_csv("Data_Management\id_districts.csv")
-gdf_administrativeDistricts = gpd.read_file("Graph\Shapes\\administrativeDistricts.shp")
-df_administrativeDistricts = pd.read_csv("Data_Management\id_administrativeDistricts.csv")
+gdf_cities = gpd.read_file("Graph\Data_Management\Shapes\cities.shp")
+df_cities = pd.read_csv("Graph\id_cities.csv")
+gdf_districts = gpd.read_file("Graph\Data_Management\Shapes\districts.shp")
+df_districts = pd.read_csv("Graph\id_districts.csv")
+gdf_administrativeDistricts = gpd.read_file("Graph\Data_Management\Shapes\\administrativeDistricts.shp")
+df_administrativeDistricts = pd.read_csv("Graph\id_administrativeDistricts.csv")
 
 def buildArray(gdf,df,id_column):
     result_array = []
@@ -43,7 +43,7 @@ districts = buildArray(gdf_districts,df_districts,"D_ID")
 administrativeDistricts = buildArray(gdf_administrativeDistricts,df_administrativeDistricts,"A_ID")
 
 # Save the result_array as csv
-with open('Data_Management/next_to.csv', 'w', newline='') as file:
+with open('Graph/touches.csv', 'w', newline='') as file:
     writer = csv.writer(file)
     writer.writerow(["StartID", "EndID"])
     writer.writerows(cities)
