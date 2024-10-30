@@ -1,31 +1,34 @@
 # SIS-Course
 
 
-## User Stories
+## Personas
 
-### #1 Anne, 22 Jahre
-- Geoinformatik Studientin aus Münster
-- arbeitet viel mit räumlichen Daten und deren Geometrien
-- hat bereits einige Skills mit QGis, Javascript, Python und Docker
-- träumt von einer Anwendung, die ihr präzise Lagen von Städten zueinander in ihrer Umgebung geben kann
+### #1 Anne, 22 years old
+- Geoinformatics student from Münster
+- works a lot with spatial data and their geometries
+- already has some skills with QGis, Javascript, Python and Docker
+- dreams of an application that can give her precise locations of cities to each other in their surroundings
 
-### #2 Lysa, 32 Jahre
-- Geographin, arbeitet beim statistischen Amt Nordrheinwestfalen in Düsseldorf
-- führt die Statistiken über Städte und Gemeinden in ganz NRW
-- hat bereits Erfahrungen mit QGis und Excel
-- sucht nach einem Weg, schnell an präzise Daten zu kommen, die die Germetrie von Städten und Landkreisen in NRW betreffen
+### #2 Lysa, 32 years old
+- Geographer, works at the Statistical Office of North Rhine-Westphalia in Düsseldorf
+- keeps statistics on cities and municipalities throughout NRW
+- already has experience with QGis and Excel
+- is looking for a way to quickly obtain precise data on the geometries of cities and districts in NRW
 
-### #3 Pädda, 42 Jahre
-- gebürtiger Mannheimer, ist vor Kurzem umgezogen ins Sauerland
-- kennt sich nicht gut in seiner neuen Wohnregion aus
-- hat nur Vorkenntnisse in der Benutzung digitaler Karten
-- benötigt eine Möglichkeit, sich durch eine digitale Anwendung besser über die Städte im Sauerland zu informieren
+### #3 Pädda, 42 years old
+- born in Mannheim, recently moved to the Sauerland region
+- does not know his new region well
+- only has previous knowledge of using digital maps
+- needs a way to get better information about the cities in Sauerland using a digital application
 
-### #4 Beyza, 52 Jahre
--
+### #4 Beyza, 52 years old
+- Tax consultant from Cologne
+- has a well-known tax office and therefore clients from all over NRW
+- only has prior knowledge of using chatbots, such as ChatGPT
+- would like to use an application to get a quick overview of her clients' regions of residence
 
-### #5 Rofl, 62 Jahre
-- Frührentner aus Gelsenkirchen
-- regt sich darüber auf, dass ihm klassische Suchmaschinen, wie Google, oftmals ungenaue oder falsche Informationen über sein räumliches Umfeld liefern
-- hat keinerlei Vorkenntnisse
-- würde sich sehr über eine Anwendung freuen, die ihm bessere Ergebnisse liefert, wenn er das nächste Mal nach der genauen räumlichen Lage der Großstädten im Ruhrgebiet sucht
+### #5 Rofl, 62 years old
+- Early retiree from Gelsenkirchen
+- is annoyed that traditional search engines, such as Google, often provide him with inaccurate or incorrect information about his local area
+- has no previous knowledge
+- would be very happy to have an application that gives him better results the next time he searches for the exact location of major cities in the Ruhr area
