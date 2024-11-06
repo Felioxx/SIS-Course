@@ -1,6 +1,7 @@
 import geopandas as gpd
 import csv
 import pandas as pd
+import centroid
 
 gdf_cities = gpd.read_file("Graph\Data_Management\Shapes\cities.shp")
 df_cities = pd.read_csv("Graph\id_cities.csv")
@@ -15,24 +16,34 @@ def buildArray(gdf,df,id_column):
     for n in gdf.Neighbors:
         name = gdf.Name[i]
         startID = None
+        centroidA = None
         # Search startID for name
         j = 0
         for el in df.Name:
             if el == name:
                 startID = df.loc[j][id_column]
+                centroidA = df.loc[j]["Centroid"]
                 break
             j = j+1
         for c in n.split(","):
             endID = None
+            centroidB = None
             # Search endID for name
             k = 0
             for el in df.Name:
                 if el == c:
                     endID = df.loc[k][id_column]
+                    centroidB = df.loc[k]["Centroid"]
                     break
                 k = k+1
+
+            # Calculate the relation between the two centroids of the polygons
+            rel = centroid.calc_bearing(
+                centroidB.replace("POINT (", "").replace(")", "").split(" "), 
+                centroidA.replace("POINT (", "").replace(")", "").split(" ")
+            )
             # Append the result to the result_array
-            result_array.append([startID, endID])
+            result_array.append([startID, endID, rel])
             #print([name, c])
         i = i+1
 
@@ -42,10 +53,10 @@ cities = buildArray(gdf_cities,df_cities,"C_ID")
 districts = buildArray(gdf_districts,df_districts,"D_ID")
 administrativeDistricts = buildArray(gdf_administrativeDistricts,df_administrativeDistricts,"A_ID")
 
-# Save the result_array as csv
+#Save the result_array as csv
 with open('Graph/touches.csv', 'w', newline='') as file:
     writer = csv.writer(file)
-    writer.writerow(["StartID", "EndID"])
+    writer.writerow(["StartID", "EndID", "Rel_Position"])
     writer.writerows(cities)
     writer.writerows(districts)
     writer.writerows(administrativeDistricts)
