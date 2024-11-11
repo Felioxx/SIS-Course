@@ -1,12 +1,12 @@
 ﻿Name,aH,pop_total,pop_male,pop_female
-Nordrhein-Westfalen,18193799,8936339,9257460
+Nordrhein-Westfalen,Bundesland, 18193799,8936339,9257460
 Düsseldorf,Regierungsbezirk,5281469,2582452,2699017
 Düsseldorf,krfr.Stadt,632867,305588,327279
 Duisburg,krfr.Stadt,503129,249147,253982
 Essen,krfr.Stadt,587115,285704,301411
 Krefeld,krfr.Stadt,229009,111755,117254
 Mönchengladbach,krfr.Stadt,268548,133450,135098
-Mülheim an der Ruhr,krfr.Stadt,173327,83702,89625
+Mülheim a.d. Ruhr,krfr.Stadt,173327,83702,89625
 Oberhausen,krfr.Stadt,211297,103236,108061
 Remscheid,krfr.Stadt,112939,56124,56815
 Solingen,krfr.Stadt,161254,78642,82612
@@ -39,7 +39,7 @@ Monheim am Rhein,Stadt,43739,21121,22618
 Ratingen,Stadt,88007,42730,45277
 Velbert,Stadt,82470,40463,42007
 Wülfrath,Stadt,20998,10146,10852
-Rhein-KreisNeuss,458129,222748,235381
+Rhein-Kreis Neuss,458129,222748,235381
 Dormagen,Stadt,64941,32311,32630
 Grevenbroich,Stadt,64552,31169,33383
 Jüchen,Stadt,24153,11870,12283
@@ -76,7 +76,7 @@ Köln,Regierungsbezirk,4543769,2227603,2316166
 Bonn,krfr.Stadt,335760,160609,175151
 Köln,krfr.Stadt,1086463,527236,559227
 Leverkusen,krfr.Stadt,166941,81477,85464
-StädteregionAachen (einschl.StadtAachen),563281,284369,278912
+Städteregion Aachen,563281,284369,278912
 Aachen,krfr.Stadt (ab21.10.2009),251549,131293,120256
 Alsdorf,Stadt (ab21.10.2009),48304,23938,24366
 Baesweiler,Stadt (ab21.10.2009),27992,13542,14450
@@ -137,7 +137,7 @@ Selfkant,10698,5383,5315
 Waldfeucht,9259,4651,4608
 Wassenberg,Stadt,19560,9651,9909
 Wegberg,Stadt,27327,13232,14095
-OberbergischerKreis,275840,135768,140072
+Oberbergischer Kreis,275840,135768,140072
 Bergneustadt,Stadt,18627,9072,9555
 Engelskirchen,19623,9555,10068
 Gummersbach,Stadt,51855,25597,26258
@@ -151,7 +151,7 @@ Reichshof,18791,9386,9405
 Waldbröl,Stadt,20106,9806,10300
 Wiehl,Stadt,25452,12421,13031
 Wipperfürth,Stadt,21012,10444,10568
-Rheinisch-BergischerKreis,287217,138997,148220
+Rheinisch-Bergischer Kreis,287217,138997,148220
 Bergisch Gladbach,Stadt,112806,54059,58747
 Burscheid,Stadt,18977,9276,9701
 Kürten,20157,9885,10272
@@ -370,7 +370,7 @@ Olsberg,Stadt,14445,7173,7272
 Schmallenberg,Stadt,25077,12648,12429
 Sundern (Sauerland),Stadt,27803,13924,13879
 Winterberg,Stadt,12743,6426,6317
-MärkischerKreis,408289,201071,207218
+Märkischer Kreis,408289,201071,207218
 Altena,Stadt,16349,8124,8225
 Balve,Stadt,11108,5551,5557
 Halver,Stadt,16286,8017,8269
