@@ -11,7 +11,7 @@ df_population = df_population.drop(["pop_male", "pop_female"], axis=1)
 df_id_cities=pd.merge(df_id_cities, df_population, on='Name', how='left')
 
 df_id_cities = df_id_cities.loc[(df_id_cities['aH'] != "Regierungsbezirk") & (df_id_cities['aH'] != "Kreis")]
-df_id_cities = df_id_cities.drop("Geometry", axis=1)
+# df_id_cities = df_id_cities.drop("Geometry", axis=1)
 df_id_cities = df_id_cities.drop(["aH"], axis=1)
 
 # df_id_cities_none = df_id_cities.loc[(df_id_cities['aH'].isnull() == True)]
@@ -19,7 +19,7 @@ df_id_cities = df_id_cities.drop(["aH"], axis=1)
 print(df_id_cities)
 
 df_cities = pd.DataFrame(df_id_cities) 
-df_cities.to_csv('id_cities.csv', index=False, sep = ",") 
+df_cities.to_csv('Graph\id_cities_pop.csv', index=False, sep = ",") 
 
 
 # folium plotlib leaflet bokert
