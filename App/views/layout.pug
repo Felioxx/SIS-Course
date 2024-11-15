@@ -1,7 +1,96 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    title= "Chat with NRW - " + title
+    link(rel='stylesheet' href='/stylesheets/style.css')
+    link(rel='stylesheet' href='/stylesheets/leaflet.css')
+    //link(rel='stylesheet' href='/stylesheets/bootstrap.css')
+    script(src='https://cdn.jsdelivr.net/npm/pdfjs-dist@2.10.377/build/pdf.min.js')
+
+    link(rel='stylesheet' href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous")
+    link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css')
+
+    link(rel='stylesheet' href='https://unpkg.com/leaflet@1.9.2/dist/leaflet.css' integrity='sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=' crossorigin='')
+    script(src='https://unpkg.com/leaflet@1.9.2/dist/leaflet.js' integrity='sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=' crossorigin='')
+
+    script(src='/javascripts/globalFunctions.js')
+
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description' content='')
+    meta(name='author' content='')
+
+    //leaflet-draw
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js")
+
+
+    // Darkmode
+    //script(src='/javascripts/darkmode.js' )
+
+    // Favicon
+    link(rel='icon' sizes='16x16 32x32 48x48 64x64' href='/images/flavicon.png')
+
+  body.d-flex.flex-column.min-vh-100
+    // Responsive navbar
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+      .container.px-5
+        a.navbar-brand(href='/') 
+          // img.img-fluid.rounded.me-1.d-inline-block.align-text-top(src="/images/IconDonkey.svg" width="50" height="50") 
+        a.navbar-brand(href='/') Chat with NRW  
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='/') 
+                // img.img-fluid.rounded.me-1.d-inline-block.align-text-center(src="/images/IconDonkey.svg" width="30" height="30")
+                text  Home
+            li.nav-item
+              a.nav-link(href='/chat')
+                // img.img-fluid.rounded.me-1.d-inline-block.align-text-center(src="/images/IconUpload.svg" width="30" height="30")
+                text  Chat
+            li.nav-item
+              a.nav-link(href='/info') 
+                // img.img-fluid.rounded.me-1.d-inline-block.align-text-center(src="/images/IconResultBlau.svg" width="30" height="30")
+                text  Info     
+    // Page Content
+    .container
+      block content
+
+    // Footer
+
+
+    footer.bg-dark.text-center.text-muted.text-lg-start.mt-5
+
+      .container.ms-2.me-2.px-2.mt-2
+        .row
+          .col-2.text-start
+            h5.text-uppercase Links
+            ul.list-unstyled.mb-0
+              li
+                a.link1.text-muted.text-decoration-none(href='/impressum') Impressum
+              li
+                a.link1.text-muted.text-decoration-none(href='/team') Team
+          .col-3
+          .col-2
+          .col-3.text-end
+            div
+              a.me-4.text-reset(href='https://github.com/Laxeros07/Geosoft-II')
+                i.bi.bi-github
+              a.me-4.text-reset(href='mailto:Apollo13.spacey@gmx.de?subject=Erreicht%20ueber%20Website&amp;body=Sehr%20geehrtes%20Spacey%20Team,%0A%0A')
+                i.bi.bi-envelope-at-fill
+              a.me-4.text-reset(href='tel:+4915901600951')
+                i.bi.bi-phone
+        .row
+          .col-md-2
+          .col-md-8.text-center
+            // img.logo.sm.m-2(src='/images/spaceylogo.png')
+          .col-md-2
+      .text-center.p-1.text-white(style='background-color:#009036;')
+        | &copy; 2024 by: 
+        i.text-white Chat with NRW Project
+        // Copyright
+
+    // Bootstrap core JS
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js')

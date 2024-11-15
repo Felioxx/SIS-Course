@@ -1,0 +1,40 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+    body
+        section
+        .container.py-5
+            .row.d-flex.justify-content-center
+            .col-md-8.col-lg-6.col-xl-4
+                #chat1.card(style='border-radius: 15px;')
+                .card-header.d-flex.justify-content-between.align-items-center.p-3.bg-info.text-white.border-bottom-0(style='border-top-left-radius: 15px; border-top-right-radius: 15px;')
+                    i.fas.fa-angle-left
+                    p.mb-0.fw-bold Live chat
+                    i.fas.fa-times
+                .card-body
+                    .d-flex.flex-row.justify-content-start.mb-4
+                    img(src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp' alt='avatar 1' style='width: 45px; height: 100%;')
+                    .p-3.ms-3(style='border-radius: 15px; background-color: rgba(57, 192, 237,.2);')
+                        p.small.mb-0
+                        | Hello and thank you for visiting MDBootstrap. Please click the video
+                        | below.
+                    .d-flex.flex-row.justify-content-end.mb-4
+                    .p-3.me-3.border.bg-body-tertiary(style='border-radius: 15px;')
+                        p.small.mb-0 Thank you, I really like your product.
+                    img(src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp' alt='avatar 1' style='width: 45px; height: 100%;')
+                    .d-flex.flex-row.justify-content-start.mb-4
+                    img(src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp' alt='avatar 1' style='width: 45px; height: 100%;')
+                    .ms-3(style='border-radius: 15px;')
+                        .bg-image
+                        img(src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/screenshot1.webp' style='border-radius: 15px;' alt='video')
+                        a(href='#!')
+                            .mask
+                    .d-flex.flex-row.justify-content-start.mb-4
+                    img(src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp' alt='avatar 1' style='width: 45px; height: 100%;')
+                    .p-3.ms-3(style='border-radius: 15px; background-color: rgba(57, 192, 237,.2);')
+                        p.small.mb-0 ...
+                    .form-outline(data-mdb-input-init='')
+                    textarea#textAreaExample.form-control.bg-body-tertiary(rows='4')
+                    label.form-label(for='textAreaExample') Type your message

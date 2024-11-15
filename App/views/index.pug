@@ -1,5 +1,20 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+  // Heading Row
+  .row.gy-4.gx-lg-5.align-items-center.mt-5
+    .col-lg-5
+      img.img-fluid.rounded.mb-4.mb-lg-0(src="/images/map_nrw.jpg")
+
+    .col-lg-7
+      h1.font-weight-light Chat with NRW
+      p
+        | Chat with NRW is a project of the ....
+
+  // Call to Action
+  .card.text-white.bg-success(style='--bs-bg-opacity: .75;').my-5.py-4.text-center
+    .card-body
+      p.blockquote.m-0.
+        "Auch Bretter vor dem Kopf lassen im Idealfall Platz für den Durchblick!"
+
