@@ -59,18 +59,26 @@
                 "nullable": true
               },
               {
-                "$id": "p:3",
-                "token": "Geometry",
+                "$id": "p:17",
+                "token": "Centroid",
                 "type": {
                   "type": "string"
                 },
                 "nullable": true
               },
               {
-                "$id": "p:17",
-                "token": "Centroid",
+                "$id": "p:6",
+                "token": "Pop_total",
                 "type": {
-                  "type": "string"
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:22",
+                "token": "Area",
+                "type": {
+                  "type": "float"
                 },
                 "nullable": true
               }
@@ -97,18 +105,26 @@
                 "nullable": true
               },
               {
-                "$id": "p:6",
-                "token": "Geometry",
+                "$id": "p:15",
+                "token": "Centroid",
                 "type": {
                   "type": "string"
                 },
                 "nullable": true
               },
               {
-                "$id": "p:15",
-                "token": "Centroid",
+                "$id": "p:12",
+                "token": "Pop_total",
                 "type": {
-                  "type": "string"
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:21",
+                "token": "Area",
+                "type": {
+                  "type": "float"
                 },
                 "nullable": true
               }
@@ -135,18 +151,26 @@
                 "nullable": true
               },
               {
-                "$id": "p:9",
-                "token": "Geometry",
+                "$id": "p:13",
+                "token": "Centroid",
                 "type": {
                   "type": "string"
                 },
                 "nullable": true
               },
               {
-                "$id": "p:13",
-                "token": "Centroid",
+                "$id": "p:19",
+                "token": "Pop_total",
                 "type": {
-                  "type": "string"
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:20",
+                "token": "Area",
+                "type": {
+                  "type": "float"
                 },
                 "nullable": true
               }
@@ -173,10 +197,18 @@
                 "nullable": true
               },
               {
-                "$id": "p:12",
-                "token": "Geometry",
+                "$id": "p:9",
+                "token": "Pop_total",
                 "type": {
-                  "type": "string"
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:3",
+                "token": "Area",
+                "type": {
+                  "type": "float"
                 },
                 "nullable": true
               }
@@ -509,6 +541,144 @@
         "type": "local",
         "tableSchemas": [
           {
+            "name": "id_administrativeDistricts_pop.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "A_ID",
+                "type": "string",
+                "sample": "A1",
+                "include": true
+              },
+              {
+                "name": "Name",
+                "type": "string",
+                "sample": "Arnsberg",
+                "include": true
+              },
+              {
+                "name": "Centroid",
+                "type": "string",
+                "sample": "POINT (8.005532441655175 51.316107759729995)",
+                "include": true
+              },
+              {
+                "name": "Area",
+                "type": "float",
+                "sample": "8007.07",
+                "include": true
+              },
+              {
+                "name": "Pop_total",
+                "type": "integer",
+                "sample": "3602426",
+                "include": true
+              }
+            ]
+          },
+          {
+            "name": "id_cities_pop.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "C_ID",
+                "type": "string",
+                "sample": "C1",
+                "include": true
+              },
+              {
+                "name": "Name",
+                "type": "string",
+                "sample": "Brilon",
+                "include": true
+              },
+              {
+                "name": "Centroid",
+                "type": "string",
+                "sample": "POINT (8.603999826038203 51.4080887876535)",
+                "include": true
+              },
+              {
+                "name": "Area",
+                "type": "float",
+                "sample": "228.95",
+                "include": true
+              },
+              {
+                "name": "Pop_total",
+                "type": "integer",
+                "sample": "25575",
+                "include": true
+              }
+            ]
+          },
+          {
+            "name": "id_districts_pop.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "D_ID",
+                "type": "string",
+                "sample": "D1",
+                "include": true
+              },
+              {
+                "name": "Name",
+                "type": "string",
+                "sample": "Hochsauerlandkreis",
+                "include": true
+              },
+              {
+                "name": "Centroid",
+                "type": "string",
+                "sample": "POINT (8.384858204548713 51.30692468508486)",
+                "include": true
+              },
+              {
+                "name": "Area",
+                "type": "float",
+                "sample": "1958.61",
+                "include": true
+              },
+              {
+                "name": "Pop_total",
+                "type": "float",
+                "sample": "130884.0",
+                "include": true
+              }
+            ]
+          },
+          {
+            "name": "id_federalStates_pop.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "F_ID",
+                "type": "string",
+                "sample": "F1",
+                "include": true
+              },
+              {
+                "name": "Name",
+                "type": "string",
+                "sample": "Nordrhein-Westfalen",
+                "include": true
+              },
+              {
+                "name": "Area",
+                "type": "float",
+                "sample": "34112.38",
+                "include": true
+              },
+              {
+                "name": "Pop_total",
+                "type": "integer",
+                "sample": "18193799",
+                "include": true
+              }
+            ]
+          },
+          {
             "name": "touches.csv",
             "expanded": true,
             "fields": [
@@ -549,120 +719,6 @@
                 "include": true
               }
             ]
-          },
-          {
-            "name": "id_federalStates.csv",
-            "expanded": true,
-            "fields": [
-              {
-                "name": "F_ID",
-                "type": "string",
-                "sample": "F1",
-                "include": true
-              },
-              {
-                "name": "Name",
-                "type": "string",
-                "sample": "Nordrhein-Westfalen",
-                "include": true
-              },
-              {
-                "name": "Geometry",
-                "type": "string",
-                "sample": "MULTIPOLYGON (((466982.98 5781752.43, 466836.25 5781757.12, 466861.49 5781866.56, 466711.45 5781912....",
-                "include": true
-              }
-            ]
-          },
-          {
-            "name": "id_administrativeDistricts.csv",
-            "expanded": true,
-            "fields": [
-              {
-                "name": "A_ID",
-                "type": "string",
-                "sample": "A1",
-                "include": true
-              },
-              {
-                "name": "Name",
-                "type": "string",
-                "sample": "Arnsberg",
-                "include": true
-              },
-              {
-                "name": "Geometry",
-                "type": "string",
-                "sample": "POLYGON ((7.8499320459770745 50.92465942325366, 7.84991772047727 50.92476144248021, 7.84954426203662...",
-                "include": true
-              },
-              {
-                "name": "Centroid",
-                "type": "string",
-                "sample": "POINT (8.005532441655175 51.316107759729995)",
-                "include": true
-              }
-            ]
-          },
-          {
-            "name": "id_cities.csv",
-            "expanded": true,
-            "fields": [
-              {
-                "name": "C_ID",
-                "type": "string",
-                "sample": "C1",
-                "include": true
-              },
-              {
-                "name": "Name",
-                "type": "string",
-                "sample": "Brilon",
-                "include": true
-              },
-              {
-                "name": "Geometry",
-                "type": "string",
-                "sample": "POLYGON ((8.603575110127304 51.484622860915444, 8.603680718866455 51.484486596428596, 8.603724136379...",
-                "include": true
-              },
-              {
-                "name": "Centroid",
-                "type": "string",
-                "sample": "POINT (8.603999826038203 51.4080887876535)",
-                "include": true
-              }
-            ]
-          },
-          {
-            "name": "id_districts.csv",
-            "expanded": true,
-            "fields": [
-              {
-                "name": "D_ID",
-                "type": "string",
-                "sample": "D1",
-                "include": true
-              },
-              {
-                "name": "Name",
-                "type": "string",
-                "sample": "Hochsauerlandkreis",
-                "include": true
-              },
-              {
-                "name": "Geometry",
-                "type": "string",
-                "sample": "POLYGON ((8.756895885255714 51.454787201485196, 8.757000591145244 51.45465682139311, 8.7570105999623...",
-                "include": true
-              },
-              {
-                "name": "Centroid",
-                "type": "string",
-                "sample": "POINT (8.384858204548713 51.30692468508486)",
-                "include": true
-              }
-            ]
           }
         ]
       },
@@ -671,7 +727,7 @@
           "node": {
             "$ref": "#n:4"
           },
-          "tableName": "id_federalStates.csv",
+          "tableName": "id_federalStates_pop.csv",
           "propertyMappings": [
             {
               "fieldName": "F_ID",
@@ -686,9 +742,15 @@
               }
             },
             {
-              "fieldName": "Geometry",
+              "fieldName": "Pop_total",
               "property": {
-                "$ref": "#p:12"
+                "$ref": "#p:9"
+              }
+            },
+            {
+              "fieldName": "Area",
+              "property": {
+                "$ref": "#p:3"
               }
             }
           ]
@@ -697,7 +759,7 @@
           "node": {
             "$ref": "#n:3"
           },
-          "tableName": "id_administrativeDistricts.csv",
+          "tableName": "id_administrativeDistricts_pop.csv",
           "propertyMappings": [
             {
               "fieldName": "A_ID",
@@ -712,15 +774,21 @@
               }
             },
             {
-              "fieldName": "Geometry",
-              "property": {
-                "$ref": "#p:9"
-              }
-            },
-            {
               "fieldName": "Centroid",
               "property": {
                 "$ref": "#p:13"
+              }
+            },
+            {
+              "fieldName": "Pop_total",
+              "property": {
+                "$ref": "#p:19"
+              }
+            },
+            {
+              "fieldName": "Area",
+              "property": {
+                "$ref": "#p:20"
               }
             }
           ]
@@ -729,7 +797,7 @@
           "node": {
             "$ref": "#n:2"
           },
-          "tableName": "id_districts.csv",
+          "tableName": "id_districts_pop.csv",
           "propertyMappings": [
             {
               "fieldName": "D_ID",
@@ -744,15 +812,21 @@
               }
             },
             {
-              "fieldName": "Geometry",
-              "property": {
-                "$ref": "#p:6"
-              }
-            },
-            {
               "fieldName": "Centroid",
               "property": {
                 "$ref": "#p:15"
+              }
+            },
+            {
+              "fieldName": "Pop_total",
+              "property": {
+                "$ref": "#p:12"
+              }
+            },
+            {
+              "fieldName": "Area",
+              "property": {
+                "$ref": "#p:21"
               }
             }
           ]
@@ -761,7 +835,7 @@
           "node": {
             "$ref": "#n:1"
           },
-          "tableName": "id_cities.csv",
+          "tableName": "id_cities_pop.csv",
           "propertyMappings": [
             {
               "fieldName": "C_ID",
@@ -776,15 +850,21 @@
               }
             },
             {
-              "fieldName": "Geometry",
-              "property": {
-                "$ref": "#p:3"
-              }
-            },
-            {
               "fieldName": "Centroid",
               "property": {
                 "$ref": "#p:17"
+              }
+            },
+            {
+              "fieldName": "Pop_total",
+              "property": {
+                "$ref": "#p:6"
+              }
+            },
+            {
+              "fieldName": "Area",
+              "property": {
+                "$ref": "#p:22"
               }
             }
           ]
@@ -811,10 +891,30 @@
           "tableName": "touches.csv",
           "propertyMappings": [
             {
-              "fieldName": "Rel_Position",
               "property": {
                 "$ref": "#p:14"
-              }
+              },
+              "fieldName": "Rel_Position"
+            }
+          ],
+          "fromMapping": {
+            "fieldName": "StartID"
+          },
+          "toMapping": {
+            "fieldName": "EndID"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:5"
+          },
+          "tableName": "touches.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:16"
+              },
+              "fieldName": "Rel_Position"
             }
           ],
           "fromMapping": {
@@ -839,26 +939,6 @@
         },
         {
           "relationship": {
-            "$ref": "#r:5"
-          },
-          "tableName": "touches.csv",
-          "propertyMappings": [
-            {
-              "fieldName": "Rel_Position",
-              "property": {
-                "$ref": "#p:16"
-              }
-            }
-          ],
-          "fromMapping": {
-            "fieldName": "StartID"
-          },
-          "toMapping": {
-            "fieldName": "EndID"
-          }
-        },
-        {
-          "relationship": {
             "$ref": "#r:2"
           },
           "tableName": "within.csv",
@@ -877,10 +957,10 @@
           "tableName": "touches.csv",
           "propertyMappings": [
             {
-              "fieldName": "Rel_Position",
               "property": {
                 "$ref": "#p:18"
-              }
+              },
+              "fieldName": "Rel_Position"
             }
           ],
           "fromMapping": {

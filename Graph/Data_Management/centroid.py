@@ -3,11 +3,10 @@ import csv
 import pandas as pd
 from shapely.geometry import LineString, MultiPoint, Polygon
 
-# Calculate the centroid of a geometry
-def calculate_centroid(c_geometry):
-
+# Format the geometry to use it as a Polygon
+def format_geometry(geometry):
     coord_pairs = []
-    coord_pairs.append(c_geometry.replace("POLYGON ", "").replace("MULTI", "").replace("(","").replace(")","").split(", "))
+    coord_pairs.append(geometry.replace("POLYGON ", "").replace("MULTI", "").replace("(","").replace(")","").split(", "))
 
     c_centroid = []
     for pair in coord_pairs[0]:
@@ -15,8 +14,22 @@ def calculate_centroid(c_geometry):
         if(c[0] != "" and c[1] != ""):
             c_centroid.append((float(c[0]), float(c[1])))
 
-    polygon = Polygon(c_centroid)
+    return c_centroid
+
+# Calculate the centroid of a geometry
+def calculate_centroid(c_geometry):
+    
+    polygon = Polygon(format_geometry(c_geometry))
     return(polygon.centroid)
+
+# Calculate the area of a geometry
+def calculate_area(c_geometry):
+
+    polygon = Polygon(format_geometry(c_geometry))
+    gdf = gpd.GeoDataFrame({'geometry': [polygon]}, crs="EPSG:4326")
+    gdf_utm = gdf.to_crs(epsg=25832)
+    area_m2 = gdf_utm['geometry'].area[0]
+    return(round(area_m2 / 1000000, 2))
 
 # Calculate the realtive postion of two points
 # Source: https://math.stackexchange.com/questions/3812110/calculation-of-direction-between-two-geographical-points
