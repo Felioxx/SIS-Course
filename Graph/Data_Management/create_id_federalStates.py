@@ -1,9 +1,9 @@
 import geopandas as gpd
 import csv
 import pandas as pd
+import centroid
 
-
-gdf = gpd.read_file("Graph\Shapes\\federalStates.shp")
+gdf = gpd.read_file("Graph\Data_Management\Shapes\\federalStates.shp")
 # Simplify the geometries
 gdf['geometry'] = gdf['geometry'].simplify(tolerance=0.01, preserve_topology=True)
 d_names = gdf['Name']
@@ -15,11 +15,15 @@ for c in d_names:
     D_ID.append("F"+str(i))
     i = i+1
 
-districts = {"F_ID": D_ID, "Name": d_names, "Geometry": d_geometry}
+# Area
+gdf = gdf.to_crs(epsg=3035)
+area = round(gdf['geometry'].area / 1000000 , 2)
+
+districts = {"F_ID": D_ID, "Name": d_names, "Geometry": d_geometry, "Area": [area]}
 df_districts = pd.DataFrame(districts)
 
 # Konvertieren der Geometrie zu WKT (Well-Known Text) für den Export in CSV
 df_districts['Geometry'] = df_districts['Geometry'].apply(lambda x: x.wkt)
 
 # Speichern als CSV
-df_districts.to_csv('Data_Management/id_federalStates.csv', index=False, sep=",")
+df_districts.to_csv('Graph\id_federalStates.csv', index=False, sep=",")
