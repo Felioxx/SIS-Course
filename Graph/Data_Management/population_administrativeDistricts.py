@@ -11,7 +11,7 @@ df_id_cities=pd.merge(df_id_cities, df_population, on='Name', how='left')
 
 df_id_cities = df_id_cities.loc[(df_id_cities['aH'] != "Stadt") & (df_id_cities['aH'] != "Kreis") & (df_id_cities['aH'] != "krfr.Stadt")]
 # df_id_cities = df_id_cities.drop("Geometry", axis=1)
-df_id_cities = df_id_cities.drop(["aH"], axis=1)
+df_id_cities = df_id_cities.drop(["aH", "Geometry"], axis=1)
 
 # df_id_cities_none = df_id_cities.loc[(df_id_cities['aH'].isnull() == True)]
 
