@@ -13,8 +13,6 @@ html
     link(rel='stylesheet' href='https://unpkg.com/leaflet@1.9.2/dist/leaflet.css' integrity='sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=' crossorigin='')
     script(src='https://unpkg.com/leaflet@1.9.2/dist/leaflet.js' integrity='sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=' crossorigin='')
 
-    script(src='/javascripts/globalFunctions.js')
-
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
     meta(name='description' content='')
@@ -23,6 +21,15 @@ html
     //leaflet-draw
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js")
+    //Chat
+    // vendor css & style files
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Josefin+Sans:300|Open+Sans:300|Oxygen|Material+Icons' rel='stylesheet')
+    // custom css
+    link(rel='stylesheet' type='text/css' href='/stylesheets/chat.css')
+    // vendor script files
+    script(src='https://code.jquery.com/jquery-2.2.4.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
 
 
     // Darkmode
@@ -36,7 +43,7 @@ html
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
       .container.px-5
         a.navbar-brand(href='/') 
-          // img.img-fluid.rounded.me-1.d-inline-block.align-text-top(src="/images/IconDonkey.svg" width="50" height="50") 
+          img.img-fluid.rounded.me-1.d-inline-block.align-text-top(src="/images/flavicon.png" width="50" height="50") 
         a.navbar-brand(href='/') Chat with NRW  
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
           span.navbar-toggler-icon
@@ -69,14 +76,12 @@ html
             h5.text-uppercase Links
             ul.list-unstyled.mb-0
               li
-                a.link1.text-muted.text-decoration-none(href='/impressum') Impressum
-              li
-                a.link1.text-muted.text-decoration-none(href='/team') Team
+                a.link1.text-muted.text-decoration-none(href='/info') Impressum
           .col-3
           .col-2
           .col-3.text-end
             div
-              a.me-4.text-reset(href='https://github.com/Laxeros07/Geosoft-II')
+              a.me-4.text-reset(href='https://github.com/Felioxx/SIS-Course')
                 i.bi.bi-github
               a.me-4.text-reset(href='mailto:Apollo13.spacey@gmx.de?subject=Erreicht%20ueber%20Website&amp;body=Sehr%20geehrtes%20Spacey%20Team,%0A%0A')
                 i.bi.bi-envelope-at-fill
@@ -85,11 +90,11 @@ html
         .row
           .col-md-2
           .col-md-8.text-center
-            // img.logo.sm.m-2(src='/images/spaceylogo.png')
+            img.logo.sm.m-2(src='/images/flavicon.png' width="50" height="50" )
           .col-md-2
       .text-center.p-1.text-white(style='background-color:#009036;')
         | &copy; 2024 by: 
-        i.text-white Chat with NRW Project
+        i.text-white Shadowfax
         // Copyright
 
     // Bootstrap core JS
