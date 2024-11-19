@@ -1,4 +1,4 @@
-﻿Name,aH,pop_total,pop_male,pop_female
+﻿Name,aH,Pop_total,pop_male,pop_female
 Nordrhein-Westfalen,Bundesland, 18193799,8936339,9257460
 Düsseldorf,Regierungsbezirk,5281469,2582452,2699017
 Düsseldorf,krfr.Stadt,632867,305588,327279
@@ -6,7 +6,7 @@ Duisburg,krfr.Stadt,503129,249147,253982
 Essen,krfr.Stadt,587115,285704,301411
 Krefeld,krfr.Stadt,229009,111755,117254
 Mönchengladbach,krfr.Stadt,268548,133450,135098
-Mülheim a.d. Ruhr,krfr.Stadt,173327,83702,89625
+Mülheim an der Ruhr,krfr.Stadt,173327,83702,89625
 Oberhausen,krfr.Stadt,211297,103236,108061
 Remscheid,krfr.Stadt,112939,56124,56815
 Solingen,krfr.Stadt,161254,78642,82612
