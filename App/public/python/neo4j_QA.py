@@ -7,7 +7,7 @@ import os
 
 url = "neo4j+s://f02e0524.databases.neo4j.io"
 username = "neo4j"
-password = "w60PF-SK2gGIlDII6zZMw8XMo67mqIFSrPU54_E3AU4"
+password = ""
 
 graph = Neo4jGraph(
     url=url,
@@ -15,7 +15,7 @@ graph = Neo4jGraph(
     password=password
 )
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = ""
 
 chain = GraphCypherQAChain.from_llm(
     graph=graph,
