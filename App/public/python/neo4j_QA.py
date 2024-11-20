@@ -1,13 +1,13 @@
 import sys
-from langchain.graphs import Neo4jGraph
-from langchain_experimental.graph_transformers import LLMGraphTransformer
 from langchain_openai import ChatOpenAI
+from langchain.chains import GraphCypherQAChain
+from langchain_community.graphs import Neo4jGraph
 import getpass
 import os
 
 url = "neo4j+s://f02e0524.databases.neo4j.io"
 username = "neo4j"
-password = "w60PF-SK2gGIlDII6zZMw8XMo67mqIFSrPU54_E3AU4"
+password = ""
 
 graph = Neo4jGraph(
     url=url,
@@ -17,13 +17,16 @@ graph = Neo4jGraph(
 
 os.environ["OPENAI_API_KEY"] = ""
 
-llm = ChatOpenAI(temperature=0, model_name="gpt-4-turbo") # https://platform.openai.com/docs/models
+chain = GraphCypherQAChain.from_llm(
+    graph=graph,
+    cypher_llm=ChatOpenAI(temperature=0, model="gpt-4o-mini"), # gpt-4o-mini	gpt-3.5-turbo
+    qa_llm=ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k"),
+    verbose=True,
+    allow_dangerous_requests=True
+)
 
-llm_transformer = LLMGraphTransformer(llm=llm) # documentation, see https://python.langchain.com/docs/how_to/graph_constructing/
-
-from langchain_core.documents import Document
-
-documents = [Document(page_content=example_text)]
-graph_documents = llm_transformer.convert_to_graph_documents(documents)
-print(f"Nodes:{graph_documents[0].nodes}")
-print(f"Relationships:{graph_documents[0].relationships}")
+question = "Give me the names of all cities, that lie next to Münster."
+response = chain.invoke(question)
+print(response)
+#result = response.get("answer")
+#print("Ergebnis aus der Neo4j-Datenbank:", len(result))
