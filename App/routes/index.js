@@ -4,9 +4,7 @@ const { spawn } = require("child_process");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  runPythonScript("public/python/neo4j_QA.py", [
-    "Which cities lie in the district of Steinfurt?",
-  ]);
+  runPythonScript("public/python/test_script.py", ["Eva"]);
   res.render("index", { title: "Express" });
 });
 
