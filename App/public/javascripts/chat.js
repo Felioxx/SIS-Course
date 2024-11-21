@@ -1,6 +1,9 @@
 // const { JSDOM } = require("jsdom");
 // const { window } = new JSDOM("");
 // const $ = require("jquery")(window);
+
+//const { post } = require("../../routes");
+
 /**
  * Returns the current datetime for the message creation.
  */
@@ -91,31 +94,23 @@ function showBotMessage(message, datetime) {
 $("#send_button").on("click", function (e) {
   // get and show message and reset input
   showUserMessage($("#msg_input").val());
+
+  var question = $("#msg_input").val();
+  console.log(question);
+  // emptying the input
   $("#msg_input").val("");
-
-  // show bot message
-  setTimeout(function () {
-    showBotMessage(randomstring());
-  }, 300);
+  // fetching the answer
+  fetch("http://localhost:3000/chat", {
+    method: "POST",
+    body: JSON.stringify({ message: question }),
+  }).then(function (response) {
+    console.log(response);
+    // show bot message
+    setTimeout(function () {
+      showBotMessage(response);
+    }, 300);
+  });
 });
-
-/**
- * Returns a random string. Just to specify bot message to the user.
- */
-function randomstring(length = 20) {
-  let output = "";
-
-  // magic function
-  var randomchar = function () {
-    var n = Math.floor(Math.random() * 62);
-    if (n < 10) return n;
-    if (n < 36) return String.fromCharCode(n + 55);
-    return String.fromCharCode(n + 61);
-  };
-
-  while (output.length < length) output += randomchar();
-  return output;
-}
 
 /**
  * Set initial bot message to the screen for the user.

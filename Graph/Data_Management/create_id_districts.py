@@ -18,7 +18,12 @@ centroids = []
 for g in d_geometry:
     centroids.append(centroid.calculate_centroid(g))
 
-districts = {"D_ID":D_ID, "Name": d_names, "Geometry": d_geometry, "Centroid": centroids}
+# Area
+areas = []
+for g in d_geometry:
+    areas.append(centroid.calculate_area(g))
+
+districts = {"D_ID":D_ID, "Name": d_names, "Geometry": d_geometry, "Centroid": centroids, "Area": areas}
 
 df_districts = pd.DataFrame(districts) 
 df_districts.to_csv('Graph\id_districts.csv', index=False, sep = ",")
