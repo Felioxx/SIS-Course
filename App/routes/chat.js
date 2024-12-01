@@ -7,11 +7,29 @@ router.get("/", function (req, res, next) {
 });
 
 router.post("/", function (req, res, next) {
-  question = req.body.message;
+  var question = req.body.message;
   console.log("question:" + question);
-  answer = runPythonScript("public/python/neo4j_QA.py", [question]);
-  console.log("answer:" + answer);
-  res.send(answer);
+
+  // Use child_process.spawn method from
+  // child_process module and assign it
+  // to variable spawn
+  var spawn = require("child_process").spawn;
+
+  // Parameters passed in spawn -
+  // 1. type_of_script
+  // 2. list containing Path of the script
+  //    and arguments for the script
+  var process = spawn("python", ["public/python/neo4j_QA.py", question]);
+
+  // Takes stdout data from script which executed
+  // with arguments and send this data to res object
+  process.stdout.on("data", function (data) {
+    data += stdout.toString();
+    res.send(data.toString());
+  });
+  // answer = runPythonScript("public/python/neo4j_QA.py", [question]);
+  // console.log("answer:" + answer);
+  // res.send(answer);
 });
 
 // Run a Python script and return output
