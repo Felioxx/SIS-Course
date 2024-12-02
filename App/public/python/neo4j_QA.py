@@ -34,6 +34,7 @@ async def handle_request(input_data):
 
 question = sys.argv[1]
 response = asyncio.run(handle_request(question))
+print("test")
 print(response)
 #result = response.get("answer")
 #print("Ergebnis aus der Neo4j-Datenbank:", len(result))

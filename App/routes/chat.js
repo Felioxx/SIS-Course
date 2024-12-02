@@ -24,8 +24,18 @@ router.post("/", function (req, res, next) {
   // Takes stdout data from script which executed
   // with arguments and send this data to res object
   process.stdout.on("data", function (data) {
-    data += stdout.toString();
+    console.log(`stdout: ${data}`);
     res.send(data.toString());
+  });
+
+  // Capture and log stderr data
+  process.stderr.on("data", function (data) {
+    console.error(`stderr: ${data}`);
+  });
+
+  // Capture and log the exit event
+  process.on("exit", function (code) {
+    console.log(`Child process exited with code ${code}`);
   });
   // answer = runPythonScript("public/python/neo4j_QA.py", [question]);
   // console.log("answer:" + answer);
