@@ -110,11 +110,15 @@ $("#send_button").on("click", function (e) {
     .then(function (response) {
       // The response is a Response instance.
       // You parse the data into a useable format using `.json()`
-      return response.text();
+      return response.json();
     })
     .then(function (data) {
       // `data` is the parsed version of the JSON returned from the above endpoint.
       console.log(data); // { "userId": 1, "id": 1, "title": "...", "body": "..." }
+      setTimeout(function () {
+        showBotMessage(data.result);
+      }, 300);
+      /*
       // Schritt 1: ANSI-Farbcodes entfernen
       const withoutAnsi = data.replace(/\u001b\[[0-9;]*m/g, "");
 
@@ -133,6 +137,7 @@ $("#send_button").on("click", function (e) {
       } else {
         console.log("Kein JSON-Teil gefunden.");
       }
+        */
     });
 });
 

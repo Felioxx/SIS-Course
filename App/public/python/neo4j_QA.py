@@ -2,9 +2,12 @@ import sys
 from langchain_openai import ChatOpenAI
 from langchain.chains import GraphCypherQAChain
 from langchain_community.graphs import Neo4jGraph
+from langchain.prompts import PromptTemplate
 import getpass
 import os
 import asyncio
+import json
+import re
 
 url = "neo4j+ssc://f02e0524.databases.neo4j.io:7687"
 username = "neo4j"
@@ -22,7 +25,7 @@ chain = GraphCypherQAChain.from_llm(
     graph=graph,
     cypher_llm=ChatOpenAI(temperature=0, model="gpt-4o-mini"), # gpt-4o-mini	gpt-3.5-turbo
     qa_llm=ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k"),
-    verbose=True,
+    verbose=False,
     allow_dangerous_requests=True
 )
 
@@ -34,7 +37,13 @@ async def handle_request(input_data):
 
 question = sys.argv[1]
 response = asyncio.run(handle_request(question))
-print("test")
-print(response)
+
+# Entferne ANSI-Codes und andere Debug-Ausgaben
+#response_str = str(response)
+#cleaned_response = re.sub(r'\x1b\[.*?m', '', response_str)  # Entfernt ANSI-Codes
+#cleaned_response = cleaned_response.split("\n")[-1]  # Nimm nur die letzte relevante Zeile (JSON)
+
+json_response = json.dumps(response, indent=2)  # Convert to JSON format with indentation
+print(json_response)
 #result = response.get("answer")
 #print("Ergebnis aus der Neo4j-Datenbank:", len(result))
