@@ -116,6 +116,8 @@ $("#send_button").on("click", function (e) {
   console.log(question);
   // emptying the input
   $("#msg_input").val("");
+  // render loading screen
+  renderLoadingHorse();
   // fetching the answer
   fetch("http://localhost:3000/chat", {
     method: "POST",
@@ -133,6 +135,7 @@ $("#send_button").on("click", function (e) {
       // `data` is the parsed version of the JSON returned from the above endpoint.
       console.log(data); // { "userId": 1, "id": 1, "title": "...", "body": "..." }
       setTimeout(function () {
+        removeRunningHorse();
         showBotMessage(data.result);
       }, 300);
       /*
@@ -157,6 +160,38 @@ $("#send_button").on("click", function (e) {
         */
     });
 });
+
+function renderLoadingHorse() {
+  let messagesContainer = $(".messages");
+
+  // init element
+  let message = $(`
+      <li class="message">
+          <div class="l-gif"></div>
+      </li>
+      `);
+
+  // add to parent
+  messagesContainer.append(message);
+
+  // animations
+  setTimeout(function () {
+    message.addClass("appeared");
+  }, 0);
+  messagesContainer.animate(
+    { scrollTop: messagesContainer.prop("scrollHeight") },
+    300
+  );
+}
+
+function removeRunningHorse() {
+  let messagesContainer = $(".messages");
+  messagesContainer.children().last().remove();
+  messagesContainer.animate(
+    { scrollTop: messagesContainer.prop("scrollHeight") },
+    300
+  );
+}
 
 /**
  * Set initial bot message to the screen for the user.

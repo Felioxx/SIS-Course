@@ -63,6 +63,13 @@ body {
   display: inline-block;
 }
 
+.messages .message .l-gif {
+  height: 78px;
+  width: 130px;
+  background-size: cover !important;
+  display: inline-block;
+}
+
 .messages .message .timestamp {
   font-size: 10px;
   font-weight: 300;
@@ -108,6 +115,11 @@ body {
 .messages .message.left .avatar {
   float: left;
   background: url("../images/flavicon.png");
+}
+
+.l-gif {
+  float: left;
+  background: url("../images/runningHorse.gif");
 }
 
 .messages .message.left .text_wrapper {
@@ -168,7 +180,7 @@ body {
 
 .app_button_1 {
   width: 140px;
-  background-color: #a3d063;
+  background-color: #009036;
   border-radius: 50px;
   cursor: pointer;
   padding: 12px;
