@@ -28,14 +28,31 @@ function renderMessageToScreen(args) {
   );
   let messagesContainer = $(".messages");
 
+  let els = "";
+  switch (args.message_side) {
+    case "left":
+      els = `
+        <div class="avatar"></div>
+        <div class="text_wrapper">
+          <div class="text">${args.text}</div>
+          <div class="timestamp">${displayDate}</div>
+        </div>
+      `;
+      break;
+    case "right":
+      els = `
+        <div class="text_wrapper">
+          <div class="text">${args.text}</div>
+          <div class="timestamp">${displayDate}</div>
+        </div>
+        <div class="avatar"></div> 
+      `;
+      break;
+  }
   // init element
   let message = $(`
       <li class="message ${args.message_side}">
-          <div class="avatar"></div>
-          <div class="text_wrapper">
-              <div class="text">${args.text}</div>
-              <div class="timestamp">${displayDate}</div>
-          </div>
+        ${els}
       </li>
       `);
 

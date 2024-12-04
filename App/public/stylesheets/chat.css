@@ -179,6 +179,32 @@ body {
   text-align: center;
 }
 
+/* Functions that the text breaks correctly*/
+
+.message {
+  display: flex;
+}
+
+.message.left {
+  justify-content: flex-start;
+}
+
+.message.right {
+  justify-content: flex-end;
+}
+/*Source: https://stackoverflow.com/questions/67858284/how-to-have-one-item-shrink-fully-before-another-starts-to-shrink */
+.avatar {
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.text_wrapper {
+  flex-shrink: 1;
+  flex-grow: 0;
+  flex-basis: auto;
+  min-width: 0;
+}
+
 /* faq section | right side */
 /* ---------------------------------------------------------------------- */
 
