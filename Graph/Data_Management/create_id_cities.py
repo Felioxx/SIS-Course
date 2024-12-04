@@ -10,9 +10,9 @@ c_geometry = df.geometry
 
 # Ids
 i = 1
-C_ID = []
+ID = []
 for c in c_names:
-    C_ID.append("C"+str(i))
+    ID.append("C"+str(i))
     i = i+1
 
 # Centroid
@@ -25,7 +25,7 @@ areas = []
 for g in c_geometry:
     areas.append(centroid.calculate_area(g))
 
-cities = {"C_ID":C_ID, "Name": c_names, "Geometry": c_geometry, "Centroid": centroids, "Area": areas}
+cities = {"ID":ID, "Name": c_names, "Geometry": c_geometry, "Centroid": centroids, "Area": areas}
 
 df_cities = pd.DataFrame(cities) 
 df_cities.to_csv('Graph\id_cities.csv', index=False, sep = ",") 

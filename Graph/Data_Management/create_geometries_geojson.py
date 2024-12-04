@@ -21,7 +21,7 @@ feature = {
 }
 
 for index, row in df_id_cities.iterrows():
-    feature["id"] = row["C_ID"]
+    feature["id"] = row["ID"]
 
     polygon = wkt_loads(row["Geometry"])
     geojson_geometry = mapping(polygon)
@@ -30,7 +30,7 @@ for index, row in df_id_cities.iterrows():
     geojson["features"].append(feature)
 
 for index, row in df_id_districts.iterrows():
-    feature["id"] = row["D_ID"]
+    feature["id"] = row["ID"]
 
     polygon = wkt_loads(row["Geometry"])
     geojson_geometry = mapping(polygon)
@@ -38,7 +38,7 @@ for index, row in df_id_districts.iterrows():
     geojson["features"].append(feature)
 
 for index, row in df_id_administrativeDistricts.iterrows():
-    feature["id"] = row["A_ID"]
+    feature["id"] = row["ID"]
 
     polygon = wkt_loads(row["Geometry"])
     geojson_geometry = mapping(polygon)
@@ -46,7 +46,7 @@ for index, row in df_id_administrativeDistricts.iterrows():
     geojson["features"].append(feature)
 
 for index, row in df_id_federalStates.iterrows():
-    feature["id"] = row["F_ID"]
+    feature["id"] = row["ID"]
 
     polygon = wkt_loads(row["Geometry"])
     geojson_geometry = mapping(polygon)

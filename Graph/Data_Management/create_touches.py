@@ -49,9 +49,9 @@ def buildArray(gdf,df,id_column):
 
     return result_array
 
-cities = buildArray(gdf_cities,df_cities,"C_ID")
-districts = buildArray(gdf_districts,df_districts,"D_ID")
-administrativeDistricts = buildArray(gdf_administrativeDistricts,df_administrativeDistricts,"A_ID")
+cities = buildArray(gdf_cities,df_cities,"ID")
+districts = buildArray(gdf_districts,df_districts,"ID")
+administrativeDistricts = buildArray(gdf_administrativeDistricts,df_administrativeDistricts,"ID")
 
 #Save the result_array as csv
 with open('Graph/touches.csv', 'w', newline='') as file:

@@ -10,16 +10,16 @@ d_names = gdf['Name']
 d_geometry = gdf['geometry']
 
 i = 1
-D_ID = []
+ID = []
 for c in d_names:
-    D_ID.append("F"+str(i))
+    ID.append("F"+str(i))
     i = i+1
 
 # Area
 gdf = gdf.to_crs(epsg=3035)
 area = round(gdf['geometry'].area / 1000000 , 2)
 
-districts = {"F_ID": D_ID, "Name": d_names, "Geometry": d_geometry, "Area": [area]}
+districts = {"ID": ID, "Name": d_names, "Geometry": d_geometry, "Area": [area]}
 df_districts = pd.DataFrame(districts)
 
 # Konvertieren der Geometrie zu WKT (Well-Known Text) für den Export in CSV

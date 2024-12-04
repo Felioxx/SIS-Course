@@ -44,7 +44,7 @@
             "properties": [
               {
                 "$id": "p:1",
-                "token": "C_ID",
+                "token": "ID",
                 "type": {
                   "type": "string"
                 },
@@ -90,7 +90,7 @@
             "properties": [
               {
                 "$id": "p:4",
-                "token": "D_ID",
+                "token": "ID",
                 "type": {
                   "type": "string"
                 },
@@ -136,7 +136,7 @@
             "properties": [
               {
                 "$id": "p:7",
-                "token": "A_ID",
+                "token": "ID",
                 "type": {
                   "type": "string"
                 },
@@ -182,7 +182,7 @@
             "properties": [
               {
                 "$id": "p:10",
-                "token": "F_ID",
+                "token": "ID",
                 "type": {
                   "type": "string"
                 },
@@ -384,36 +384,22 @@
         ],
         "constraints": [
           {
-            "$id": "c:1",
-            "name": "C_ID_City_uniq",
+            "$id": "c:4",
+            "name": "ID_FederalState_uniq",
             "constraintType": "uniqueness",
             "entityType": "node",
             "nodeLabel": {
-              "$ref": "#nl:1"
+              "$ref": "#nl:4"
             },
             "properties": [
               {
-                "$ref": "#p:1"
-              }
-            ]
-          },
-          {
-            "$id": "c:2",
-            "name": "D_ID_District_uniq",
-            "constraintType": "uniqueness",
-            "entityType": "node",
-            "nodeLabel": {
-              "$ref": "#nl:2"
-            },
-            "properties": [
-              {
-                "$ref": "#p:4"
+                "$ref": "#p:10"
               }
             ]
           },
           {
             "$id": "c:3",
-            "name": "A_ID_AdministrativeDistrict_uniq",
+            "name": "ID_AdministrativeDistrict_uniq",
             "constraintType": "uniqueness",
             "entityType": "node",
             "nodeLabel": {
@@ -426,16 +412,30 @@
             ]
           },
           {
-            "$id": "c:4",
-            "name": "F_ID_FederalState_uniq",
+            "$id": "c:2",
+            "name": "ID_District_uniq",
             "constraintType": "uniqueness",
             "entityType": "node",
             "nodeLabel": {
-              "$ref": "#nl:4"
+              "$ref": "#nl:2"
             },
             "properties": [
               {
-                "$ref": "#p:10"
+                "$ref": "#p:4"
+              }
+            ]
+          },
+          {
+            "$id": "c:1",
+            "name": "ID_City_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:1"
+            },
+            "properties": [
+              {
+                "$ref": "#p:1"
               }
             ]
           }
@@ -443,7 +443,7 @@
         "indexes": [
           {
             "$id": "i:1",
-            "name": "C_ID_City_uniq",
+            "name": "ID_City_uniq",
             "indexType": "default",
             "entityType": "node",
             "nodeLabel": {
@@ -457,7 +457,7 @@
           },
           {
             "$id": "i:2",
-            "name": "D_ID_District_uniq",
+            "name": "ID_District_uniq",
             "indexType": "default",
             "entityType": "node",
             "nodeLabel": {
@@ -471,7 +471,7 @@
           },
           {
             "$id": "i:3",
-            "name": "A_ID_AdministrativeDistrict_uniq",
+            "name": "ID_AdministrativeDistrict_uniq",
             "indexType": "default",
             "entityType": "node",
             "nodeLabel": {
@@ -485,7 +485,7 @@
           },
           {
             "$id": "i:4",
-            "name": "F_ID_FederalState_uniq",
+            "name": "ID_FederalState_uniq",
             "indexType": "default",
             "entityType": "node",
             "nodeLabel": {
@@ -545,7 +545,7 @@
             "expanded": true,
             "fields": [
               {
-                "name": "A_ID",
+                "name": "ID",
                 "type": "string",
                 "sample": "A1",
                 "include": true
@@ -581,7 +581,7 @@
             "expanded": true,
             "fields": [
               {
-                "name": "C_ID",
+                "name": "ID",
                 "type": "string",
                 "sample": "C1",
                 "include": true
@@ -617,7 +617,7 @@
             "expanded": true,
             "fields": [
               {
-                "name": "D_ID",
+                "name": "ID",
                 "type": "string",
                 "sample": "D1",
                 "include": true
@@ -653,7 +653,7 @@
             "expanded": true,
             "fields": [
               {
-                "name": "F_ID",
+                "name": "ID",
                 "type": "string",
                 "sample": "F1",
                 "include": true
@@ -730,12 +730,6 @@
           "tableName": "id_federalStates_pop.csv",
           "propertyMappings": [
             {
-              "fieldName": "F_ID",
-              "property": {
-                "$ref": "#p:10"
-              }
-            },
-            {
               "fieldName": "Name",
               "property": {
                 "$ref": "#p:11"
@@ -752,6 +746,12 @@
               "property": {
                 "$ref": "#p:3"
               }
+            },
+            {
+              "property": {
+                "$ref": "#p:10"
+              },
+              "fieldName": "ID"
             }
           ]
         },
@@ -761,12 +761,6 @@
           },
           "tableName": "id_administrativeDistricts_pop.csv",
           "propertyMappings": [
-            {
-              "fieldName": "A_ID",
-              "property": {
-                "$ref": "#p:7"
-              }
-            },
             {
               "fieldName": "Name",
               "property": {
@@ -790,6 +784,12 @@
               "property": {
                 "$ref": "#p:20"
               }
+            },
+            {
+              "property": {
+                "$ref": "#p:7"
+              },
+              "fieldName": "ID"
             }
           ]
         },
@@ -799,12 +799,6 @@
           },
           "tableName": "id_districts_pop.csv",
           "propertyMappings": [
-            {
-              "fieldName": "D_ID",
-              "property": {
-                "$ref": "#p:4"
-              }
-            },
             {
               "fieldName": "Name",
               "property": {
@@ -828,6 +822,12 @@
               "property": {
                 "$ref": "#p:21"
               }
+            },
+            {
+              "property": {
+                "$ref": "#p:4"
+              },
+              "fieldName": "ID"
             }
           ]
         },
@@ -837,12 +837,6 @@
           },
           "tableName": "id_cities_pop.csv",
           "propertyMappings": [
-            {
-              "fieldName": "C_ID",
-              "property": {
-                "$ref": "#p:1"
-              }
-            },
             {
               "fieldName": "Name",
               "property": {
@@ -866,6 +860,12 @@
               "property": {
                 "$ref": "#p:22"
               }
+            },
+            {
+              "property": {
+                "$ref": "#p:1"
+              },
+              "fieldName": "ID"
             }
           ]
         }

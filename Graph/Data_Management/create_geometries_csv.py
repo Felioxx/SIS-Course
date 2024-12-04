@@ -16,16 +16,16 @@ def create_geojson_geometry(wkt_geom):
 rows = []
 
 for index, row in df_id_cities.iterrows():
-    rows.append({"ID": row["C_ID"], "Geometry": create_geojson_geometry(row["Geometry"])})
+    rows.append({"ID": row["ID"], "Geometry": create_geojson_geometry(row["Geometry"])})
 
 for index, row in df_id_districts.iterrows():
-    rows.append({"ID": row["D_ID"], "Geometry": create_geojson_geometry(row["Geometry"])})
+    rows.append({"ID": row["ID"], "Geometry": create_geojson_geometry(row["Geometry"])})
 
 for index, row in df_id_administrativeDistricts.iterrows():
-    rows.append({"ID": row["A_ID"], "Geometry": create_geojson_geometry(row["Geometry"])})
+    rows.append({"ID": row["ID"], "Geometry": create_geojson_geometry(row["Geometry"])})
 
 for index, row in df_id_federalStates.iterrows():
-    rows.append({"ID": row["F_ID"], "Geometry": create_geojson_geometry(row["Geometry"])})
+    rows.append({"ID": row["ID"], "Geometry": create_geojson_geometry(row["Geometry"])})
 
 df_geojson = pd.DataFrame(rows)
 
