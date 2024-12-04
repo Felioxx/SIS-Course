@@ -63,6 +63,13 @@ body {
   display: inline-block;
 }
 
+.messages .message .l-gif {
+  height: 78px;
+  width: 130px;
+  background-size: cover !important;
+  display: inline-block;
+}
+
 .messages .message .timestamp {
   font-size: 10px;
   font-weight: 300;
@@ -108,6 +115,11 @@ body {
 .messages .message.left .avatar {
   float: left;
   background: url("../images/flavicon.png");
+}
+
+.l-gif {
+  float: left;
+  background: url("../images/runningHorse.gif");
 }
 
 .messages .message.left .text_wrapper {
