@@ -35,7 +35,7 @@ CYPHER_GENERATION_PROMPT = PromptTemplate(
 
 url = "neo4j+ssc://f02e0524.databases.neo4j.io:7687"
 username = "neo4j"
-password = "w60PF-SK2gGIlDII6zZMw8XMo67mqIFSrPU54_E3AU4"
+password = "w60PF-SK2gGIlDII6zZMw8XMo67mqIFSrPU54_E3AU"
 
 graph = Neo4jGraph(
     url=url,

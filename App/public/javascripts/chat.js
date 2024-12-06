@@ -165,8 +165,9 @@ function renderLoadingHorse() {
   let messagesContainer = $(".messages");
 
   // init element
-  let message = $(`
-      <li class="message">
+  let message = $(` 
+      <li class="message left">
+          <div class="avatar"></div>
           <div class="l-gif"></div>
       </li>
       `);
