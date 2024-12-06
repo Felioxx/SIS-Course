@@ -11,14 +11,17 @@ import re
 
 from langchain.prompts.prompt import PromptTemplate
 
+#Always return the IDs of all used entities in the context in two separate arrays named 'questionIDs' and 'answerIDs'.
 
 CYPHER_GENERATION_TEMPLATE = """
 Task:Generate Cypher statement to query a graph database.
 Instructions:
 Use only the provided relationship types and properties in the schema.
 Do not use any other relationship types or properties that are not provided.
+
 Schema:
 {schema}
+
 Cypher examples:
 # Which cities lie left of Münster?
 MATCH p=(C:City WHERE C.Name = "Münster") -[T:touches WHERE T.`Rel_Position`in ["western","southwestern","northwestern"]]->(:City) RETURN p
@@ -32,6 +35,7 @@ The question is:
 CYPHER_GENERATION_PROMPT = PromptTemplate(
     input_variables=["schema", "question"], template=CYPHER_GENERATION_TEMPLATE
 )
+
 
 url = "neo4j+ssc://f02e0524.databases.neo4j.io:7687"
 username = "neo4j"
@@ -51,7 +55,8 @@ chain = GraphCypherQAChain.from_llm(
     qa_llm=ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k"),
     verbose=False,
     allow_dangerous_requests=True,
-    cypher_prompt=CYPHER_GENERATION_PROMPT
+    cypher_prompt=CYPHER_GENERATION_PROMPT,
+    return_intermediate_steps=True
 )
 
 # Async function in Python - waits for the neo4j request before printing the answer

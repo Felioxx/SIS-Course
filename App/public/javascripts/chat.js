@@ -138,26 +138,8 @@ $("#send_button").on("click", function (e) {
         removeRunningHorse();
         showBotMessage(data.result);
       }, 300);
-      /*
-      // Schritt 1: ANSI-Farbcodes entfernen
-      const withoutAnsi = data.replace(/\u001b\[[0-9;]*m/g, "");
 
-      // Schritt 2: Zeilenumbrüche und überflüssige Leerzeichen entfernen
-      const cleanedInput = withoutAnsi.replace(/\r?\n|\r/g, "");
-
-      // Schritt 3: JSON-Teil extrahieren
-      const match = cleanedInput.match(/\{.*\}$/);
-      if (match) {
-        const jsonString = match[0].split("chain.test")[1];
-        const jsonObject = JSON.parse(jsonString.replace(/'/g, '"'));
-        console.log("JSON-Objekt:", jsonObject);
-        setTimeout(function () {
-          showBotMessage(jsonObject.result);
-        }, 300);
-      } else {
-        console.log("Kein JSON-Teil gefunden.");
-      }
-        */
+      //data.intermediate_steps[1].forEach((item) => {});
     });
 });
 
