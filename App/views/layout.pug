@@ -50,16 +50,14 @@ html
         #navbarSupportedContent.collapse.navbar-collapse
           ul.navbar-nav.ms-auto.mb-2.mb-lg-0
             li.nav-item
-              a.nav-link.active(aria-current='page' href='/') 
+              a.nav-link(aria-current='page' href='/') 
                 // img.img-fluid.rounded.me-1.d-inline-block.align-text-center(src="/images/IconDonkey.svg" width="30" height="30")
                 text  Home
             li.nav-item
-              a.nav-link(href='/chat')
-                // img.img-fluid.rounded.me-1.d-inline-block.align-text-center(src="/images/IconUpload.svg" width="30" height="30")
+              a.nav-link(aria-current='page' href='/chat')
                 text  Chat
             li.nav-item
-              a.nav-link(href='/info') 
-                // img.img-fluid.rounded.me-1.d-inline-block.align-text-center(src="/images/IconResultBlau.svg" width="30" height="30")
+              a.nav-link(aria-current='page' href='/info')
                 text  Info     
     // Page Content
     .container
@@ -90,11 +88,12 @@ html
         .row
           .col-md-2
           .col-md-8.text-center
-            img.logo.sm.m-2(src='/images/flavicon.png' width="50" height="50" )
+            img.logo.sm.m-2(src='/images/flavicon_ring.png' width="50" height="50" )
           .col-md-2
       .text-center.p-1.text-white(style='background-color:#009036;')
         | &copy; 2024 by: 
-        i.text-white Shadowfax
+        i.text-white Shadowfax   
+        img.img-fluid.rounded.me-1.d-inline-block.align-text-top(src="/images/shadowfax.jpg" width="30" height="30") 
         // Copyright
 
     // Bootstrap core JS

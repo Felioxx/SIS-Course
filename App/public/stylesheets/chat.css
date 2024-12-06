@@ -64,8 +64,7 @@ body {
 }
 
 .messages .message .l-gif {
-  height: 78px;
-  width: 130px;
+  width: 70px;
   background-size: cover !important;
   display: inline-block;
 }
@@ -119,7 +118,7 @@ body {
 
 .l-gif {
   float: left;
-  background: url("../images/runningHorse.gif");
+  background: url("../images/typing-crop.gif");
 }
 
 .messages .message.left .text_wrapper {
