@@ -139,7 +139,17 @@ $("#send_button").on("click", function (e) {
         showBotMessage(data.result);
       }, 300);
 
-      //data.intermediate_steps[1].forEach((item) => {});
+      ids = [];
+      data.intermediate_steps[1].context.forEach((item) => {
+        let pattern = /ID/i;
+        let matchingKeys = Object.keys(item).filter((key) => pattern.test(key));
+        console.log(matchingKeys);
+
+        matchingKeys.forEach((key) => {
+          ids.push(item[key]);
+        });
+      });
+      console.log(ids);
     });
 });
 

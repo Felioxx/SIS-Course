@@ -14,7 +14,7 @@ from langchain.prompts.prompt import PromptTemplate
 #Always return the IDs of all used entities in the context in two separate arrays named 'questionIDs' and 'answerIDs'.
 
 CYPHER_GENERATION_TEMPLATE = """
-Task:Generate Cypher statement to query a graph database.
+Task:Generate Cypher statement to query a graph database and include the IDs of all involved nodes beside the asked properties from the user.
 Instructions:
 Use only the provided relationship types and properties in the schema.
 Do not use any other relationship types or properties that are not provided.
@@ -39,7 +39,7 @@ CYPHER_GENERATION_PROMPT = PromptTemplate(
 
 url = "neo4j+ssc://f02e0524.databases.neo4j.io:7687"
 username = "neo4j"
-password = "w60PF-SK2gGIlDII6zZMw8XMo67mqIFSrPU54_E3AU"
+password = "w60PF-SK2gGIlDII6zZMw8XMo67mqIFSrPU54_E3AU4"
 
 graph = Neo4jGraph(
     url=url,
