@@ -12,3 +12,4 @@ var baseMaps = {
 };
 
 var layerControl = L.control.layers(baseMaps).addTo(map);
+let geoJsonLayerGroup = L.layerGroup().addTo(map);
