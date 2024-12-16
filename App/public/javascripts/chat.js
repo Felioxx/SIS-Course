@@ -109,6 +109,8 @@ function showBotMessage(message, datetime) {
  * Get input from user and show it on screen on button click.
  */
 $("#send_button").on("click", function (e) {
+  // Clear leaflet map
+  geoJsonLayerGroup.clearLayers();
   // get and show message and reset input
   showUserMessage($("#msg_input").val());
 
@@ -139,17 +141,18 @@ $("#send_button").on("click", function (e) {
         showBotMessage(data.result);
       }, 300);
 
-      ids = [];
+      ids = new Set();
       data.intermediate_steps[1].context.forEach((item) => {
         let pattern = /ID/i;
         let matchingKeys = Object.keys(item).filter((key) => pattern.test(key));
         console.log(matchingKeys);
 
         matchingKeys.forEach((key) => {
-          ids.push(item[key]);
+          ids.add(item[key]);
         });
       });
       console.log(ids);
+      parseCSV(ids);
     });
 });
 
@@ -184,6 +187,30 @@ function removeRunningHorse() {
     { scrollTop: messagesContainer.prop("scrollHeight") },
     300
   );
+}
+
+async function parseCSV(searchIDs) {
+  const response = await fetch("geometries.csv");
+  if (!response.ok) {
+    throw new Error(`Error: ${response.statusText}`);
+  }
+  const csvText = await response.text();
+
+  // Use PapaParse to parse CSV
+  const parsed = Papa.parse(csvText, {
+    header: true,
+    skipEmptyLines: true,
+  });
+
+  const rows = parsed.data;
+  // get the geometries and add them to the leaflet map
+  for (const item of searchIDs) {
+    let result = rows.find((row) => row.ID === item);
+
+    let geo = JSON.parse(result.Geometry);
+    let newLayer = L.geoJSON(geo);
+    geoJsonLayerGroup.addLayer(newLayer);
+  }
 }
 
 /**
