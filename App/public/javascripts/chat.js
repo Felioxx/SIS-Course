@@ -110,7 +110,15 @@ function showBotMessage(message, datetime) {
  */
 $("#send_button").on("click", function (e) {
   // Clear leaflet map
-  geoJsonLayerGroup.clearLayers();
+  cityGeoJsonLayerGroup.clearLayers();
+  districtGeoJsonLayerGroup.clearLayers();
+  adGeoJsonLayerGroup.clearLayers();
+  fsGeoJsonLayerGroup.clearLayers();
+
+  layerControl.removeLayer(fsGeoJsonLayerGroup);
+  layerControl.removeLayer(adGeoJsonLayerGroup);
+  layerControl.removeLayer(districtGeoJsonLayerGroup);
+  layerControl.removeLayer(cityGeoJsonLayerGroup);
   // get and show message and reset input
   showUserMessage($("#msg_input").val());
 
@@ -205,12 +213,85 @@ async function parseCSV(searchIDs) {
   const rows = parsed.data;
   // get the geometries and add them to the leaflet map
   for (const item of searchIDs) {
-    let result = rows.find((row) => row.ID === item);
+    let result = rows.find((row) => row.ID == item);
 
-    let geo = JSON.parse(result.Geometry);
-    let newLayer = L.geoJSON(geo);
-    geoJsonLayerGroup.addLayer(newLayer);
+    // get the type of the geometry
+    let type = Array.from(item)[0];
+    // save a color for each type
+    var color = "";
+    switch (type) {
+      case "F":
+        color = "green";
+        var geo = JSON.parse(result.Geometry);
+        var newLayer = L.geoJSON(geo, {
+          style: {
+            color: color,
+            fillColor: color,
+            weight: 3,
+            opacity: 0.65,
+            fillOpacity: 0.35,
+          },
+        });
+        fsGeoJsonLayerGroup.addLayer(newLayer);
+        break;
+      case "A":
+        color = "yellow";
+        var geo = JSON.parse(result.Geometry);
+        var newLayer = L.geoJSON(geo, {
+          style: {
+            color: color,
+            fillColor: color,
+            weight: 3,
+            opacity: 0.65,
+            fillOpacity: 0.35,
+          },
+        });
+        adGeoJsonLayerGroup.addLayer(newLayer);
+        break;
+      case "D":
+        color = "red";
+        var geo = JSON.parse(result.Geometry);
+        var newLayer = L.geoJSON(geo, {
+          style: {
+            color: color,
+            fillColor: color,
+            weight: 3,
+            opacity: 0.65,
+            fillOpacity: 0.35,
+          },
+        });
+        districtGeoJsonLayerGroup.addLayer(newLayer);
+        break;
+      case "C":
+        color = "blue";
+        var geo = JSON.parse(result.Geometry);
+        var newLayer = L.geoJSON(geo, {
+          style: {
+            color: color,
+            fillColor: color,
+            weight: 3,
+            opacity: 0.65,
+            fillOpacity: 0.35,
+          },
+        });
+        cityGeoJsonLayerGroup.addLayer(newLayer);
+        break;
+    }
+    //map.flyToBounds(geoJsonLayerGroup.getBounds());
   }
+  // make Layer Control
+  layerControl.addOverlay(fsGeoJsonLayerGroup, "Federal State");
+  layerControl.addOverlay(adGeoJsonLayerGroup, "Administrative Districts");
+  layerControl.addOverlay(districtGeoJsonLayerGroup, "Districts");
+  layerControl.addOverlay(cityGeoJsonLayerGroup, "Cities");
+
+  var group = L.featureGroup([
+    cityGeoJsonLayerGroup,
+    districtGeoJsonLayerGroup,
+    adGeoJsonLayerGroup,
+    fsGeoJsonLayerGroup,
+  ]);
+  map.flyToBounds(group.getBounds());
 }
 
 /**
