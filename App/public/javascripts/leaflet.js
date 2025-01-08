@@ -12,4 +12,7 @@ var baseMaps = {
 };
 
 var layerControl = L.control.layers(baseMaps).addTo(map);
-let geoJsonLayerGroup = L.layerGroup().addTo(map);
+let fsGeoJsonLayerGroup = L.featureGroup().addTo(map);
+let adGeoJsonLayerGroup = L.featureGroup().addTo(map);
+let districtGeoJsonLayerGroup = L.featureGroup().addTo(map);
+let cityGeoJsonLayerGroup = L.featureGroup().addTo(map);
