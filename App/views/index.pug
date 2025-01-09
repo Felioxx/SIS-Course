@@ -1,21 +1,31 @@
 extends layout
 
 block content
-    // Heading Row
-    .row.gy-4.gx-lg-5.align-items-center.mt-5
-        .col-lg-4
-            img.img-fluid.rounded.mb-4.mb-lg-0(src="/images/map_nrw.jpg")
+  // Heading Row
+  .row.gy-4.gx-lg-5.align-items-center.mt-5
+    .col-lg-4
+      img.img-fluid.rounded.mb-4.mb-lg-0(src="/images/map_nrw.jpg")
 
-        .col-lg-8
-            h1.font-weight-light Chat with NRW
-            p
-                | Chat with NRW  is an application to get precise information about the geometries of cities, districts and counties in North Rhine-Westphalia and their relations to each other. 
-                | The chatbot can be asked questions about this, to which it responds textually and graphically. 
-                | This great application goes back to the course “Spatial Information Search” from WiSe2024/25 and is maintained by Eva, Anne and Felix.
+    .col-lg-8
+      h1.font-weight-light Chat with NRW
+      p
+        | Chat with NRW  is an application to get precise information about the geometries of cities, districts and counties in North Rhine-Westphalia and their relations to each other. 
+        | The chatbot can be asked questions about this, to which it responds textually and graphically. 
+        | This great application goes back to the course “Spatial Information Search” from WiSe2024/25 and is maintained by Eva, Anne and Felix.
 
-    // Call to Action
-    .card.text-white.bg-success(style='--bs-bg-opacity: .75;').my-5.py-4.text-center
-        .card-body
-            p.blockquote.m-0.
-                “Even planks in front of your head ideally leave room for a clear view!”
+  // Call to Action
+  .card.text-white.bg-success(style='--bs-bg-opacity: .75;').my-5.py-4.text-center
+    .card-body
+      p.blockquote.m-0.
+        “Even planks in front of your head ideally leave room for a clear view!”
+  .row.gy-4.gx-lg-5.align-items-center.mt-5
+    .col-lg-5
+      .card-body
+        img.img-fluid.rounded.mb-4.mb-lg-0(src="/images/Hierachy_Diagram.png")
 
+    .col-lg-4
+      h3.font-weight-light The Hierachy of the federal government system of NRW
+      p
+        | NRW has four adminitsrative levels: Federal State, administrative District, District and the City.
+        | A City in NRW for example Siegburg lies in a District (Rhein-Sieg-Kreis)
+        | wich lies in an administrative Distric (Köln). 
