@@ -299,6 +299,6 @@ async function parseCSV(searchIDs) {
  */
 $(window).on("load", function () {
   showBotMessage(
-    "Hello there! Ask me some questions about the geometry of NRW."
+    "Hello there! Ask me some questions about the geometry of NRW. If you are not familiar with the federal system of NRW, we recommend to read the short introduction on our homepage"
   );
 });

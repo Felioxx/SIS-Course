@@ -65,6 +65,8 @@ MATCH p=(D:District WHERE D.Name = "Köln") RETURN p
 # How large is the administrative dirstrict Köln?
 MATCH p=(A:AdministrativeDistrict WHERE A.Name = "Köln") RETURN p
 
+# Where lie Münster and Soest?
+MATCH p=(C:City WHERE C.Name = "Münster" OR C.Name = "Soest") RETURN p
 
 Note: Do not include any explanations or apologies in your responses.
 Do not respond to any questions that might ask anything else than for you to construct a Cypher statement.
