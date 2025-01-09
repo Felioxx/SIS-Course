@@ -14,10 +14,13 @@ from langchain.prompts.prompt import PromptTemplate
 #Always return the IDs of all used entities in the context in two separate arrays named 'questionIDs' and 'answerIDs'.
 
 CYPHER_GENERATION_TEMPLATE = """
-Task:Generate Cypher statement to query a graph database and include the IDs of all involved nodes beside the asked properties from the user.
+Task:Generate Cypher statement to query a graph database and include the IDs of all the nodes which are used in the question and the answer as well as the asked properties from the user.
 Instructions:
+Never use the ID attribute in the answer sentence.
 Use only the provided relationship types and properties in the schema.
 Do not use any other relationship types or properties that are not provided.
+Use the following examples for few shot learning.
+All questions are in utf-8 encoded.
 
 Schema:
 {schema}
@@ -25,6 +28,45 @@ Schema:
 Cypher examples:
 # Which cities lie left of Münster?
 MATCH p=(C:City WHERE C.Name = "Münster") -[T:touches WHERE T.`Rel_Position`in ["western","southwestern","northwestern"]]->(:City) RETURN p
+
+# Which districts lie right of Münster?
+MATCH p=(D:District WHERE C.Name = "Münster") 
+        -[T:touches WHERE T.`Rel_Position`in ["eastern","southeastern","northeastern"]]->(:City) RETURN p
+
+# Which cities lie above of Selm?
+MATCH p=(C:City WHERE C.Name = "Selm") 
+        -[T:touches WHERE T.`Rel_Position`in ["southern","southwestern","southeastern"]]->(:City) RETURN p
+
+# Which districts lie eastern of the Hochsauerlandkreis?
+MATCH p=(D:District WHERE D.Name = "Hochsauerlandkreis")
+        -[T:touches WHERE T.`Rel_Position`in ["eastern","southeastern","northeastern"]]->(:District) RETURN p
+
+# Which districts lie southern of the Hochsauerlandkreis?
+MATCH p=(D:District WHERE D.Name = "Hochsauerlandkreis")
+        -[T:touches WHERE T.`Rel_Position`in ["southern","southeastern","southwestern"]]->(:District) RETURN p
+        
+# Which administrative Districts lie beneath Arnsberg?
+MATCH p=(A:AdministrativeDistrict WHERE A.Name = "Arnsberg")
+        -[T:touches WHERE T.`Rel_Position`in ["nothern","northeastern","northwestern"]]->(:AdministrativeDistrict) RETURN p
+
+# Which districts lie next to Köln?
+MATCH p=(D:District WHERE D.Name = "Köln")
+        -[T:touches]->(:District) RETURN p
+
+# In which administrative District lies Siegburg?
+MATCH p=(C:City WHERE C.Name = "Siegburg")-[:within]->(D:District) -[:within]->(A:AdministrativeDistrict) RETURN C.ID, A.ID, A.Name
+
+# How large is Köln?
+MATCH p=(C:City WHERE C.Name = "Köln") RETURN p
+
+# How large is the dirstrict Köln?
+MATCH p=(D:District WHERE D.Name = "Köln") RETURN p
+
+# How large is the administrative dirstrict Köln?
+MATCH p=(A:AdministrativeDistrict WHERE A.Name = "Köln") RETURN p
+
+# Where lie Münster and Soest?
+MATCH p=(C:City WHERE C.Name = "Münster" OR C.Name = "Soest") RETURN p
 
 Note: Do not include any explanations or apologies in your responses.
 Do not respond to any questions that might ask anything else than for you to construct a Cypher statement.
