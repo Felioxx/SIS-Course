@@ -152,12 +152,6 @@ $("#send_button").on("click", function (e) {
       let ids = new Set();
       data.intermediate_steps[1].context.forEach((item) => {
         findKeysRecursively(item, ids);
-        //console.log(matchingKeys);
-        /*
-        matchingKeys.forEach((key) => {
-          ids.add(item[key]);
-        });
-        */
       });
       console.log(ids);
       parseCSV(ids);

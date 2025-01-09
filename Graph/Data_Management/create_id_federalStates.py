@@ -5,7 +5,9 @@ import centroid
 
 gdf = gpd.read_file("Graph\Data_Management\Shapes\\federalStates.shp")
 # Simplify the geometries
-gdf['geometry'] = gdf['geometry'].simplify(tolerance=0.01, preserve_topology=True)
+gdf['geometry'] = gdf['geometry'].simplify(tolerance=0.1, preserve_topology=True)
+gdf_wgs84 = gdf.to_crs("EPSG:4326")
+gdf = gdf_wgs84
 d_names = gdf['Name']
 d_geometry = gdf['geometry']
 

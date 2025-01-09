@@ -65,6 +65,9 @@ MATCH p=(D:District WHERE D.Name = "Köln") RETURN p
 # How large is the administrative dirstrict Köln?
 MATCH p=(A:AdministrativeDistrict WHERE A.Name = "Köln") RETURN p
 
+# What lies within the district Borken?
+MATCH p=(D:District WHERE D.Name = "Borken")<-[:within]-(C:City) RETURN p
+
 
 Note: Do not include any explanations or apologies in your responses.
 Do not respond to any questions that might ask anything else than for you to construct a Cypher statement.
@@ -86,6 +89,8 @@ graph = Neo4jGraph(
     username=username,
     password=password
 )
+
+from neo4j import GraphDatabase
 
 os.environ["OPENAI_API_KEY"] = "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"
 
