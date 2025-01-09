@@ -59,11 +59,14 @@ MATCH p=(C:City WHERE C.Name = "Siegburg")-[:within]->(D:District) -[:within]->(
 # How large is Köln?
 MATCH p=(C:City WHERE C.Name = "Köln") RETURN p
 
-# How large is the dirstrict Köln?
+# How large is the district Köln?
 MATCH p=(D:District WHERE D.Name = "Köln") RETURN p
 
-# How large is the administrative dirstrict Köln?
+# How large is the administrative district Köln?
 MATCH p=(A:AdministrativeDistrict WHERE A.Name = "Köln") RETURN p
+
+# What lies within the district Borken?
+MATCH p=(D:District WHERE D.Name = "Borken")<-[:within]-(C:City) RETURN p
 
 # Where lie Münster and Soest?
 MATCH p=(C:City WHERE C.Name = "Münster" OR C.Name = "Soest") RETURN p
@@ -89,6 +92,8 @@ graph = Neo4jGraph(
     password=password
 )
 
+from neo4j import GraphDatabase
+
 os.environ["OPENAI_API_KEY"] = "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"
 
 chain = GraphCypherQAChain.from_llm(
@@ -98,7 +103,8 @@ chain = GraphCypherQAChain.from_llm(
     verbose=False,
     allow_dangerous_requests=True,
     cypher_prompt=CYPHER_GENERATION_PROMPT,
-    return_intermediate_steps=True
+    return_intermediate_steps=True,
+    top_k=9999
 )
 
 # Async function in Python - waits for the neo4j request before printing the answer
