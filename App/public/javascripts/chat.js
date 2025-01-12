@@ -235,6 +235,7 @@ function removeRunningHorse() {
 }
 
 async function parseCSV(searchIDs) {
+  console.log("TEST");
   const response = await fetch("geometries.csv");
   if (!response.ok) {
     throw new Error(`Error: ${response.statusText}`);
@@ -322,103 +323,6 @@ async function parseCSV(searchIDs) {
           },
           onEachFeature: function (feature, layer) {
             layer.bindPopup(item.name);
-          },
-        });
-        cityGeoJsonLayerGroup.addLayer(newLayer);
-        break;
-    }
-    //map.flyToBounds(geoJsonLayerGroup.getBounds());
-  }
-  // make Layer Control
-  layerControl.addOverlay(fsGeoJsonLayerGroup, "Federal State");
-  layerControl.addOverlay(adGeoJsonLayerGroup, "Administrative Districts");
-  layerControl.addOverlay(districtGeoJsonLayerGroup, "Districts");
-  layerControl.addOverlay(cityGeoJsonLayerGroup, "Cities");
-
-  var group = L.featureGroup([
-    cityGeoJsonLayerGroup,
-    districtGeoJsonLayerGroup,
-    adGeoJsonLayerGroup,
-    fsGeoJsonLayerGroup,
-  ]);
-  map.flyToBounds(group.getBounds());
-}
-
-async function parseCSV(searchIDs) {
-  const response = await fetch("geometries.csv");
-  if (!response.ok) {
-    throw new Error(`Error: ${response.statusText}`);
-  }
-  const csvText = await response.text();
-
-  // Use PapaParse to parse CSV
-  const parsed = Papa.parse(csvText, {
-    header: true,
-    skipEmptyLines: true,
-  });
-
-  const rows = parsed.data;
-  // get the geometries and add them to the leaflet map
-  for (const item of searchIDs) {
-    let result = rows.find((row) => row.ID == item);
-
-    // get the type of the geometry
-    let type = Array.from(item)[0];
-    // save a color for each type
-    var color = "";
-    switch (type) {
-      case "F":
-        color = "green";
-        var geo = JSON.parse(result.Geometry);
-        var newLayer = L.geoJSON(geo, {
-          style: {
-            color: color,
-            fillColor: color,
-            weight: 3,
-            opacity: 0.65,
-            fillOpacity: 0.35,
-          },
-        });
-        fsGeoJsonLayerGroup.addLayer(newLayer);
-        break;
-      case "A":
-        color = "yellow";
-        var geo = JSON.parse(result.Geometry);
-        var newLayer = L.geoJSON(geo, {
-          style: {
-            color: color,
-            fillColor: color,
-            weight: 3,
-            opacity: 0.65,
-            fillOpacity: 0.35,
-          },
-        });
-        adGeoJsonLayerGroup.addLayer(newLayer);
-        break;
-      case "D":
-        color = "red";
-        var geo = JSON.parse(result.Geometry);
-        var newLayer = L.geoJSON(geo, {
-          style: {
-            color: color,
-            fillColor: color,
-            weight: 3,
-            opacity: 0.65,
-            fillOpacity: 0.35,
-          },
-        });
-        districtGeoJsonLayerGroup.addLayer(newLayer);
-        break;
-      case "C":
-        color = "blue";
-        var geo = JSON.parse(result.Geometry);
-        var newLayer = L.geoJSON(geo, {
-          style: {
-            color: color,
-            fillColor: color,
-            weight: 3,
-            opacity: 0.65,
-            fillOpacity: 0.35,
           },
         });
         cityGeoJsonLayerGroup.addLayer(newLayer);
