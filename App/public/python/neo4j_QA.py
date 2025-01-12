@@ -21,6 +21,7 @@ Use only the provided relationship types and properties in the schema.
 Do not use any other relationship types or properties that are not provided.
 Use the following examples for few shot learning.
 All questions are in utf-8 encoded.
+Always return the whole graph (RETURN p) in the Cypher statement.
 
 Schema:
 {schema}
@@ -54,7 +55,7 @@ MATCH p=(D:District WHERE D.Name = "Köln")
         -[T:touches]->(:District) RETURN p
 
 # In which administrative District lies Siegburg?
-MATCH p=(C:City WHERE C.Name = "Siegburg")-[:within]->(D:District) -[:within]->(A:AdministrativeDistrict) RETURN C.ID, A.ID, A.Name
+MATCH p=(C:City WHERE C.Name = "Siegburg")-[:within]->(D:District) -[:within]->(A:AdministrativeDistrict) RETURN P
 
 # How large is Köln?
 MATCH p=(C:City WHERE C.Name = "Köln") RETURN p
