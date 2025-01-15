@@ -235,7 +235,6 @@ function removeRunningHorse() {
 }
 
 async function parseCSV(searchIDs) {
-  console.log("TEST");
   const response = await fetch("geometries.csv");
   if (!response.ok) {
     throw new Error(`Error: ${response.statusText}`);
