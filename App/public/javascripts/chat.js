@@ -249,7 +249,7 @@ async function parseCSV(searchIDs) {
 
   const rows = parsed.data;
   // get the geometries and add them to the leaflet map
-  for (const item of searchIDs) {
+  for (const item of searchIDs.slice().reverse()) {
     let result = rows.find((row) => row.ID == item.id);
 
     // get the type of the geometry
@@ -272,7 +272,6 @@ async function parseCSV(searchIDs) {
             layer.bindPopup(item.name);
           },
         });
-
         fsGeoJsonLayerGroup.addLayer(newLayer);
         break;
       case "A":
@@ -322,6 +321,7 @@ async function parseCSV(searchIDs) {
           },
           onEachFeature: function (feature, layer) {
             layer.bindPopup(item.name);
+            layer.bringToFront();
           },
         });
         cityGeoJsonLayerGroup.addLayer(newLayer);
@@ -330,10 +330,10 @@ async function parseCSV(searchIDs) {
     //map.flyToBounds(geoJsonLayerGroup.getBounds());
   }
   // make Layer Control
-  layerControl.addOverlay(fsGeoJsonLayerGroup, "Federal State");
-  layerControl.addOverlay(adGeoJsonLayerGroup, "Administrative Districts");
-  layerControl.addOverlay(districtGeoJsonLayerGroup, "Districts");
   layerControl.addOverlay(cityGeoJsonLayerGroup, "Cities");
+  layerControl.addOverlay(districtGeoJsonLayerGroup, "Districts");
+  layerControl.addOverlay(adGeoJsonLayerGroup, "Administrative Districts");
+  layerControl.addOverlay(fsGeoJsonLayerGroup, "Federal State");
 
   var group = L.featureGroup([
     cityGeoJsonLayerGroup,
