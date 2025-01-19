@@ -279,9 +279,17 @@
             "properties": [
               {
                 "$id": "p:23",
-                "token": "distance_between",
+                "token": "Distance_Between",
                 "type": {
                   "type": "float"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:24",
+                "token": "Rel_Position",
+                "type": {
+                  "type": "string"
                 },
                 "nullable": true
               }
@@ -759,13 +767,13 @@
               {
                 "name": "CityA",
                 "type": "string",
-                "sample": "Brilon",
+                "sample": "C1",
                 "include": true
               },
               {
                 "name": "CityB",
                 "type": "string",
-                "sample": "Brilon",
+                "sample": "C1",
                 "include": true
               },
               {
@@ -775,15 +783,9 @@
                 "include": true
               },
               {
-                "name": "ID_A",
+                "name": "spatial_relation",
                 "type": "string",
-                "sample": "C1",
-                "include": true
-              },
-              {
-                "name": "ID_B",
-                "type": "string",
-                "sample": "C1",
+                "sample": "western",
                 "include": true
               }
             ]
@@ -1049,13 +1051,19 @@
               "property": {
                 "$ref": "#p:23"
               }
+            },
+            {
+              "fieldName": "spatial_relation",
+              "property": {
+                "$ref": "#p:24"
+              }
             }
           ],
           "fromMapping": {
-            "fieldName": "ID_A"
+            "fieldName": "CityA"
           },
           "toMapping": {
-            "fieldName": "ID_B"
+            "fieldName": "CityB"
           }
         }
       ]
