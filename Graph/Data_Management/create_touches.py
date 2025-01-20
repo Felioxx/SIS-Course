@@ -39,8 +39,8 @@ def buildArray(gdf,df,id_column):
 
             # Calculate the relation between the two centroids of the polygons
             rel = centroid.calc_bearing(
-                centroidB.replace("POINT (", "").replace(")", "").split(" "), 
-                centroidA.replace("POINT (", "").replace(")", "").split(" ")
+                centroidA.replace("POINT (", "").replace(")", "").split(" "), 
+                centroidB.replace("POINT (", "").replace(")", "").split(" ")
             )
             # Append the result to the result_array
             result_array.append([startID, endID, rel])
