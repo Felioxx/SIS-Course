@@ -110,9 +110,12 @@ chain = GraphCypherQAChain.from_llm(
 
 # Async function in Python - waits for the neo4j request before printing the answer
 async def handle_request(input_data):
-    result = await chain.ainvoke(input_data)
-    # Process result
-    return result
+    try:
+        result = await chain.ainvoke(input_data)
+        # Process result
+        return result
+    except:
+        return {"result": "An error occurred while processing the request. Maybe the given API key is not valid." }
 
 question = sys.argv[1]
 response = asyncio.run(handle_request(question))

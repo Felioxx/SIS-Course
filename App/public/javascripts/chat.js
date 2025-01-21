@@ -149,18 +149,21 @@ $("#send_button").on("click", function (e) {
         showBotMessage(data.result);
       }, 300);
 
-      let ids = [];
-      data.intermediate_steps[1].context.forEach((item) => {
-        findKeysRecursively(item, ids);
-      });
-      // Delete duplicates
-      var uniqueIDs = ids.filter(
-        (item, index, self) =>
-          index ===
-          self.findIndex((t) => t.id === item.id && t.name === item.name)
-      );
-      console.log(uniqueIDs);
-      parseCSV(uniqueIDs);
+      // Intermediate_steps is undefined, when an error occured.
+      if (data.intermediate_steps) {
+        let ids = [];
+        data.intermediate_steps[1].context.forEach((item) => {
+          findKeysRecursively(item, ids);
+        });
+        // Delete duplicates
+        var uniqueIDs = ids.filter(
+          (item, index, self) =>
+            index ===
+            self.findIndex((t) => t.id === item.id && t.name === item.name)
+        );
+        console.log(uniqueIDs);
+        parseCSV(uniqueIDs);
+      }
     });
 });
 
