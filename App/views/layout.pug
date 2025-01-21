@@ -33,12 +33,29 @@ html
     script(src='https://code.jquery.com/jquery-2.2.4.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
 
+    script(defer src='/javascripts/popup.js')
+
 
     // Darkmode
     //script(src='/javascripts/darkmode.js' )
 
     // Favicon
     link(rel='icon' sizes='16x16 32x32 48x48 64x64' href='/images/flavicon.png')
+    // Modal
+    #myModal.modal.fade(role='dialog')
+      .modal-dialog
+        .modal-dialog.modal-dialog-centered
+          // Modal content
+          .modal-content
+            .modal-header.pull-right
+              h4.modal-title Open AI Key
+              #closeBtn.button.btn.close(type='button' onclick="$('#myModal').modal('hide');" aria-label="Close") Close
+            .modal-body
+              p Enter your Open API key:
+              input#inputPassword6.form-control(type='password' aria-describedby='passwordHelpInline')
+              p.fst-italic.fw-light Without key, Chat with NRW won't work.
+              button.btn.saveBtn.input-group-append.mb-2.mt-2.pull-right(type='submit' id='saveBtn') Save key
+            .modal-footer
 
   body.d-flex.flex-column.min-vh-100
     // Responsive navbar

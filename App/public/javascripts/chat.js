@@ -134,7 +134,7 @@ $("#send_button").on("click", function (e) {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ message: question }),
+    body: JSON.stringify({ message: question, openAiKey: openAiKey}),
   })
     .then(function (response) {
       // The response is a Response instance.

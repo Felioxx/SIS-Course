@@ -9,7 +9,8 @@ router.get("/", function (req, res, next) {
 router.post("/", function (req, res, next) {
   var question = req.body.message;
   console.log("question:" + question);
-
+  var openAiKey = req.body.openAiKey;
+  console.log("key:" + openAiKey);
   // Use child_process.spawn method from
   // child_process module and assign it
   // to variable spawn
@@ -19,7 +20,11 @@ router.post("/", function (req, res, next) {
   // 1. type_of_script
   // 2. list containing Path of the script
   //    and arguments for the script
-  var process = spawn("python", ["public/python/neo4j_QA.py", question]);
+  var process = spawn("python", [
+    "public/python/neo4j_QA.py",
+    question,
+    openAiKey,
+  ]);
 
   // Takes stdout data from script which executed
   // with arguments and send this data to res object

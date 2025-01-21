@@ -190,6 +190,12 @@ body {
   text-align: center;
 }
 
+.saveBtn {
+  background-color: #e2001a;
+
+  color: #fff;
+}
+
 /* Functions that the text breaks correctly*/
 
 .message {
