@@ -32,44 +32,50 @@ def calculate_area(c_geometry):
     return(round(area_m2 / 1000000, 2))
 
 # Calculate the realtive postion of two points
-# Source: https://math.stackexchange.com/questions/3812110/calculation-of-direction-between-two-geographical-points
+# Source: https://mapscaping.com/how-to-calculate-bearing-between-two-coordinates/
 def calc_bearing(pointA, pointB):
     import math
-    deg2rad = math.pi / 180
-    latA = float(pointA[0]) * deg2rad 
-    latB = float(pointB[0]) * deg2rad 
-    lonA = float(pointA[1]) * deg2rad 
-    lonB = float(pointB[1]) * deg2rad 
-
-    delta_ratio = math.log(math.tan(latB/ 2 + math.pi / 4) / math.tan(latA/ 2 + math.pi / 4))
-    delta_lon = abs(lonA - lonB)
-
-    negative = False
-    if(lonA - lonB < 0):
-        negative = True
-
-    delta_lon %= math.pi
-    bearing = math.atan2(delta_lon, delta_ratio)/deg2rad
-
-    if negative:
-        bearing *= -1
+    # Convert latitude and longitude to radians
+    lat1 = math.radians(float(pointA[1]))
+    long1 = math.radians(float(pointA[0]))
+    lat2 = math.radians(float(pointB[1]))
+    long2 = math.radians(float(pointB[0]))
+    
+    # Calculate the bearing
+    bearing = math.atan2(
+        math.sin(long2 - long1) * math.cos(lat2),
+        math.cos(lat1) * math.sin(lat2) - math.sin(lat1) * math.cos(lat2) * math.cos(long2 - long1)
+    )
+    
+    # Convert the bearing to degrees
+    bearing = math.degrees(bearing)
+    
+    # Make sure the bearing is positive
+    bearing = (bearing + 360) % 360
+    
     #return bearing
-    if bearing < -157.5:
-        return "eastern"
-    elif bearing < -112.5:
-        return "southeastern"
-    elif bearing < -67.5:
-        return "southern"
-    elif bearing < -22.5:
-        return "southwestern"
-    elif bearing < 22.5:
-        return "western"
-    elif bearing < 67.5:
-        return "northwestern"
-    elif bearing < 112.5:
+    #print(bearing)
+    if bearing < 22.5:
         return "northern"
-    elif bearing < 157.5:
+    elif bearing < 67.5:
         return "northeastern"
-    else:
+    elif bearing < 112.5:
         return "eastern"
+    elif bearing < 157.5:
+        return "southeastern"
+    elif bearing < 202.5:
+        return "southern"
+    elif bearing < 247.5:
+        return "southwestern"
+    elif bearing < 292.5:
+        return "western"
+    elif bearing < 337.5:
+        return "northwestern"
+    else:
+        return "northern"
         
+
+#pointB = "POINT (7.4159244216095725 51.77415323183996)".replace("POINT (", "").replace(")", "").split(" ")
+#pointA = "POINT (7.485692037043793 51.68379605100887)".replace("POINT (", "").replace(")", "").split(" ")
+
+#print(calc_bearing(pointA, pointB))
