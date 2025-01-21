@@ -72,6 +72,12 @@ MATCH p=(D:District WHERE D.Name = "Borken")<-[:within]-(C:City) RETURN p
 # Where lie Münster and Soest?
 MATCH p=(C:City WHERE C.Name = "Münster" OR C.Name = "Soest") RETURN p
 
+# Show me every city that lies eastern of Bocholt?
+MATCH p=(c1:City WHERE c1.Name = "Bocholt") - [r:relates WHERE r.Rel_Position IN ["eastern","northeastern","southeastern"]] -> (:City) RETURN p
+
+# What is the distance between Bocholt and Telgte?
+MATCH p=(C1:City WHERE C1.Name = "Bocholt") -[R:relates]->(C2:City WHERE C2.Name = "Telgte") RETURN p,R.Distance_Between
+
 Note: Do not include any explanations or apologies in your responses.
 Do not respond to any questions that might ask anything else than for you to construct a Cypher statement.
 Do not include any text except the generated Cypher statement.
@@ -81,8 +87,6 @@ The question is:
 CYPHER_GENERATION_PROMPT = PromptTemplate(
     input_variables=["schema", "question"], template=CYPHER_GENERATION_TEMPLATE
 )
-
-
 
 url = "neo4j+ssc://f02e0524.databases.neo4j.io:7687"
 username = "neo4j"
