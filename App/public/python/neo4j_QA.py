@@ -83,6 +83,7 @@ CYPHER_GENERATION_PROMPT = PromptTemplate(
 )
 
 
+
 url = "neo4j+ssc://f02e0524.databases.neo4j.io:7687"
 username = "neo4j"
 password = "w60PF-SK2gGIlDII6zZMw8XMo67mqIFSrPU54_E3AU4"
@@ -95,12 +96,13 @@ graph = Neo4jGraph(
 
 from neo4j import GraphDatabase
 
-os.environ["OPENAI_API_KEY"] = "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"
+openAiKey = sys.argv[2]
+os.environ["OPENAI_API_KEY"] = openAiKey
 
 chain = GraphCypherQAChain.from_llm(
     graph=graph,
     cypher_llm=ChatOpenAI(temperature=0, model="gpt-4o-mini"), # gpt-4o-mini	gpt-3.5-turbo
-    qa_llm=ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k"),
+    qa_llm=ChatOpenAI(temperature=0, model="gpt-4o-mini"),
     verbose=False,
     allow_dangerous_requests=True,
     cypher_prompt=CYPHER_GENERATION_PROMPT,
