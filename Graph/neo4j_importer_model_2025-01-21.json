@@ -1,0 +1,1195 @@
+{
+  "version": "2.2.0",
+  "visualisation": {
+    "nodes": [
+      {
+        "id": "n:1",
+        "position": {
+          "x": 137.59569717579996,
+          "y": 287.7000940948544
+        }
+      },
+      {
+        "id": "n:2",
+        "position": {
+          "x": 136.6334895032419,
+          "y": 183.57287162047697
+        }
+      },
+      {
+        "id": "n:3",
+        "position": {
+          "x": 138.3548571321516,
+          "y": 69.27895242417898
+        }
+      },
+      {
+        "id": "n:4",
+        "position": {
+          "x": 138.58953038235404,
+          "y": -64.71551236292541
+        }
+      }
+    ]
+  },
+  "dataModel": {
+    "version": "2.2.0",
+    "graphSchemaRepresentation": {
+      "version": "1.0.0",
+      "graphSchema": {
+        "nodeLabels": [
+          {
+            "$id": "nl:1",
+            "token": "City",
+            "properties": [
+              {
+                "$id": "p:1",
+                "token": "ID",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:2",
+                "token": "Name",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:17",
+                "token": "Centroid",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:6",
+                "token": "Pop_total",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:22",
+                "token": "Area",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "nl:2",
+            "token": "District",
+            "properties": [
+              {
+                "$id": "p:4",
+                "token": "ID",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:5",
+                "token": "Name",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:15",
+                "token": "Centroid",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:12",
+                "token": "Pop_total",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:21",
+                "token": "Area",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "nl:3",
+            "token": "AdministrativeDistrict",
+            "properties": [
+              {
+                "$id": "p:7",
+                "token": "ID",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:8",
+                "token": "Name",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:13",
+                "token": "Centroid",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:19",
+                "token": "Pop_total",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:20",
+                "token": "Area",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "nl:4",
+            "token": "FederalState",
+            "properties": [
+              {
+                "$id": "p:10",
+                "token": "ID",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:11",
+                "token": "Name",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:9",
+                "token": "Pop_total",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:3",
+                "token": "Area",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true
+              }
+            ]
+          }
+        ],
+        "relationshipTypes": [
+          {
+            "$id": "rt:1",
+            "token": "touches",
+            "properties": [
+              {
+                "$id": "p:18",
+                "token": "Rel_Position",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "rt:2",
+            "token": "within",
+            "properties": []
+          },
+          {
+            "$id": "rt:3",
+            "token": "within",
+            "properties": []
+          },
+          {
+            "$id": "rt:4",
+            "token": "touches",
+            "properties": [
+              {
+                "$id": "p:14",
+                "token": "Rel_Position",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "rt:5",
+            "token": "touches",
+            "properties": [
+              {
+                "$id": "p:16",
+                "token": "Rel_Position",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "rt:6",
+            "token": "within",
+            "properties": []
+          },
+          {
+            "$id": "rt:7",
+            "token": "relates",
+            "properties": [
+              {
+                "$id": "p:23",
+                "token": "Distance_Between",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:24",
+                "token": "Rel_Position",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "rt:8",
+            "token": "relates",
+            "properties": [
+              {
+                "$id": "p:25",
+                "token": "Distance_Between",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:26",
+                "token": "Rel_Position",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "rt:9",
+            "token": "relates",
+            "properties": [
+              {
+                "$id": "p:27",
+                "token": "Distance_Between",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:28",
+                "token": "Rel_Position",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          }
+        ],
+        "nodeObjectTypes": [
+          {
+            "$id": "n:1",
+            "labels": [
+              {
+                "$ref": "#nl:1"
+              }
+            ]
+          },
+          {
+            "$id": "n:2",
+            "labels": [
+              {
+                "$ref": "#nl:2"
+              }
+            ]
+          },
+          {
+            "$id": "n:3",
+            "labels": [
+              {
+                "$ref": "#nl:3"
+              }
+            ]
+          },
+          {
+            "$id": "n:4",
+            "labels": [
+              {
+                "$ref": "#nl:4"
+              }
+            ]
+          }
+        ],
+        "relationshipObjectTypes": [
+          {
+            "$id": "r:1",
+            "type": {
+              "$ref": "#rt:1"
+            },
+            "from": {
+              "$ref": "#n:1"
+            },
+            "to": {
+              "$ref": "#n:1"
+            }
+          },
+          {
+            "$id": "r:2",
+            "type": {
+              "$ref": "#rt:2"
+            },
+            "from": {
+              "$ref": "#n:1"
+            },
+            "to": {
+              "$ref": "#n:2"
+            }
+          },
+          {
+            "$id": "r:3",
+            "type": {
+              "$ref": "#rt:3"
+            },
+            "from": {
+              "$ref": "#n:2"
+            },
+            "to": {
+              "$ref": "#n:3"
+            }
+          },
+          {
+            "$id": "r:4",
+            "type": {
+              "$ref": "#rt:4"
+            },
+            "from": {
+              "$ref": "#n:3"
+            },
+            "to": {
+              "$ref": "#n:3"
+            }
+          },
+          {
+            "$id": "r:5",
+            "type": {
+              "$ref": "#rt:5"
+            },
+            "from": {
+              "$ref": "#n:2"
+            },
+            "to": {
+              "$ref": "#n:2"
+            }
+          },
+          {
+            "$id": "r:6",
+            "type": {
+              "$ref": "#rt:6"
+            },
+            "from": {
+              "$ref": "#n:3"
+            },
+            "to": {
+              "$ref": "#n:4"
+            }
+          },
+          {
+            "$id": "r:7",
+            "type": {
+              "$ref": "#rt:7"
+            },
+            "from": {
+              "$ref": "#n:1"
+            },
+            "to": {
+              "$ref": "#n:1"
+            }
+          },
+          {
+            "$id": "r:8",
+            "type": {
+              "$ref": "#rt:8"
+            },
+            "from": {
+              "$ref": "#n:2"
+            },
+            "to": {
+              "$ref": "#n:2"
+            }
+          },
+          {
+            "$id": "r:9",
+            "type": {
+              "$ref": "#rt:9"
+            },
+            "from": {
+              "$ref": "#n:3"
+            },
+            "to": {
+              "$ref": "#n:3"
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "$id": "c:4",
+            "name": "ID_FederalState_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:4"
+            },
+            "properties": [
+              {
+                "$ref": "#p:10"
+              }
+            ]
+          },
+          {
+            "$id": "c:3",
+            "name": "ID_AdministrativeDistrict_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:3"
+            },
+            "properties": [
+              {
+                "$ref": "#p:7"
+              }
+            ]
+          },
+          {
+            "$id": "c:2",
+            "name": "ID_District_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:2"
+            },
+            "properties": [
+              {
+                "$ref": "#p:4"
+              }
+            ]
+          },
+          {
+            "$id": "c:1",
+            "name": "ID_City_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:1"
+            },
+            "properties": [
+              {
+                "$ref": "#p:1"
+              }
+            ]
+          }
+        ],
+        "indexes": [
+          {
+            "$id": "i:1",
+            "name": "ID_City_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:1"
+            },
+            "properties": [
+              {
+                "$ref": "#p:1"
+              }
+            ]
+          },
+          {
+            "$id": "i:2",
+            "name": "ID_District_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:2"
+            },
+            "properties": [
+              {
+                "$ref": "#p:4"
+              }
+            ]
+          },
+          {
+            "$id": "i:3",
+            "name": "ID_AdministrativeDistrict_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:3"
+            },
+            "properties": [
+              {
+                "$ref": "#p:7"
+              }
+            ]
+          },
+          {
+            "$id": "i:4",
+            "name": "ID_FederalState_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:4"
+            },
+            "properties": [
+              {
+                "$ref": "#p:10"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "graphSchemaExtensionsRepresentation": {
+      "nodeKeyProperties": [
+        {
+          "node": {
+            "$ref": "#n:1"
+          },
+          "keyProperty": {
+            "$ref": "#p:1"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:2"
+          },
+          "keyProperty": {
+            "$ref": "#p:4"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:3"
+          },
+          "keyProperty": {
+            "$ref": "#p:7"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:4"
+          },
+          "keyProperty": {
+            "$ref": "#p:10"
+          }
+        }
+      ]
+    },
+    "graphMappingRepresentation": {
+      "dataSourceSchema": {
+        "type": "local",
+        "tableSchemas": [
+          {
+            "name": "id_administrativeDistricts_pop.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "ID",
+                "type": "string",
+                "sample": "A1",
+                "include": true
+              },
+              {
+                "name": "Name",
+                "type": "string",
+                "sample": "Arnsberg",
+                "include": true
+              },
+              {
+                "name": "Centroid",
+                "type": "string",
+                "sample": "POINT (8.005532441655175 51.316107759729995)",
+                "include": true
+              },
+              {
+                "name": "Area",
+                "type": "float",
+                "sample": "8007.07",
+                "include": true
+              },
+              {
+                "name": "Pop_total",
+                "type": "integer",
+                "sample": "3602426",
+                "include": true
+              }
+            ]
+          },
+          {
+            "name": "id_cities_pop.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "ID",
+                "type": "string",
+                "sample": "C1",
+                "include": true
+              },
+              {
+                "name": "Name",
+                "type": "string",
+                "sample": "Brilon",
+                "include": true
+              },
+              {
+                "name": "Centroid",
+                "type": "string",
+                "sample": "POINT (8.603999826038203 51.4080887876535)",
+                "include": true
+              },
+              {
+                "name": "Area",
+                "type": "float",
+                "sample": "228.95",
+                "include": true
+              },
+              {
+                "name": "Pop_total",
+                "type": "integer",
+                "sample": "25575",
+                "include": true
+              }
+            ]
+          },
+          {
+            "name": "id_districts_pop.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "ID",
+                "type": "string",
+                "sample": "D1",
+                "include": true
+              },
+              {
+                "name": "Name",
+                "type": "string",
+                "sample": "Hochsauerlandkreis",
+                "include": true
+              },
+              {
+                "name": "Centroid",
+                "type": "string",
+                "sample": "POINT (8.384858204548713 51.30692468508486)",
+                "include": true
+              },
+              {
+                "name": "Area",
+                "type": "float",
+                "sample": "1958.61",
+                "include": true
+              },
+              {
+                "name": "Pop_total",
+                "type": "float",
+                "sample": "130884.0",
+                "include": true
+              }
+            ]
+          },
+          {
+            "name": "id_federalStates_pop.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "ID",
+                "type": "string",
+                "sample": "F1",
+                "include": true
+              },
+              {
+                "name": "Name",
+                "type": "string",
+                "sample": "Nordrhein-Westfalen",
+                "include": true
+              },
+              {
+                "name": "Area",
+                "type": "float",
+                "sample": "34112.38",
+                "include": true
+              },
+              {
+                "name": "Pop_total",
+                "type": "integer",
+                "sample": "18193799",
+                "include": true
+              }
+            ]
+          },
+          {
+            "name": "touches.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "StartID",
+                "type": "string",
+                "sample": "C1",
+                "include": true
+              },
+              {
+                "name": "EndID",
+                "type": "string",
+                "sample": "C7",
+                "include": true
+              },
+              {
+                "name": "Rel_Position",
+                "type": "string",
+                "sample": "southwestern",
+                "include": true
+              }
+            ]
+          },
+          {
+            "name": "within.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "Start_Point",
+                "type": "string",
+                "sample": "C1",
+                "include": true
+              },
+              {
+                "name": "End_Point",
+                "type": "string",
+                "sample": "D1",
+                "include": true
+              }
+            ]
+          },
+          {
+            "name": "distances.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "Id",
+                "type": "integer",
+                "sample": "0",
+                "include": true
+              },
+              {
+                "name": "ID_A",
+                "type": "string",
+                "sample": "C1",
+                "include": true
+              },
+              {
+                "name": "ID_B",
+                "type": "string",
+                "sample": "C1",
+                "include": true
+              },
+              {
+                "name": "distance_between",
+                "type": "float",
+                "sample": "0.0",
+                "include": true
+              },
+              {
+                "name": "spatial_relation",
+                "type": "string",
+                "sample": "northern",
+                "include": true
+              }
+            ]
+          }
+        ]
+      },
+      "nodeMappings": [
+        {
+          "node": {
+            "$ref": "#n:4"
+          },
+          "tableName": "id_federalStates_pop.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "Name",
+              "property": {
+                "$ref": "#p:11"
+              }
+            },
+            {
+              "fieldName": "Pop_total",
+              "property": {
+                "$ref": "#p:9"
+              }
+            },
+            {
+              "fieldName": "Area",
+              "property": {
+                "$ref": "#p:3"
+              }
+            },
+            {
+              "property": {
+                "$ref": "#p:10"
+              },
+              "fieldName": "ID"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:3"
+          },
+          "tableName": "id_administrativeDistricts_pop.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "Name",
+              "property": {
+                "$ref": "#p:8"
+              }
+            },
+            {
+              "fieldName": "Centroid",
+              "property": {
+                "$ref": "#p:13"
+              }
+            },
+            {
+              "fieldName": "Pop_total",
+              "property": {
+                "$ref": "#p:19"
+              }
+            },
+            {
+              "fieldName": "Area",
+              "property": {
+                "$ref": "#p:20"
+              }
+            },
+            {
+              "property": {
+                "$ref": "#p:7"
+              },
+              "fieldName": "ID"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:2"
+          },
+          "tableName": "id_districts_pop.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "Name",
+              "property": {
+                "$ref": "#p:5"
+              }
+            },
+            {
+              "fieldName": "Centroid",
+              "property": {
+                "$ref": "#p:15"
+              }
+            },
+            {
+              "fieldName": "Pop_total",
+              "property": {
+                "$ref": "#p:12"
+              }
+            },
+            {
+              "fieldName": "Area",
+              "property": {
+                "$ref": "#p:21"
+              }
+            },
+            {
+              "property": {
+                "$ref": "#p:4"
+              },
+              "fieldName": "ID"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:1"
+          },
+          "tableName": "id_cities_pop.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "Name",
+              "property": {
+                "$ref": "#p:2"
+              }
+            },
+            {
+              "fieldName": "Centroid",
+              "property": {
+                "$ref": "#p:17"
+              }
+            },
+            {
+              "fieldName": "Pop_total",
+              "property": {
+                "$ref": "#p:6"
+              }
+            },
+            {
+              "fieldName": "Area",
+              "property": {
+                "$ref": "#p:22"
+              }
+            },
+            {
+              "property": {
+                "$ref": "#p:1"
+              },
+              "fieldName": "ID"
+            }
+          ]
+        }
+      ],
+      "relationshipMappings": [
+        {
+          "relationship": {
+            "$ref": "#r:6"
+          },
+          "tableName": "within.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "Start_Point"
+          },
+          "toMapping": {
+            "fieldName": "End_Point"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:4"
+          },
+          "tableName": "touches.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:14"
+              },
+              "fieldName": "Rel_Position"
+            }
+          ],
+          "fromMapping": {
+            "fieldName": "StartID"
+          },
+          "toMapping": {
+            "fieldName": "EndID"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:5"
+          },
+          "tableName": "touches.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:16"
+              },
+              "fieldName": "Rel_Position"
+            }
+          ],
+          "fromMapping": {
+            "fieldName": "StartID"
+          },
+          "toMapping": {
+            "fieldName": "EndID"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:3"
+          },
+          "tableName": "within.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "Start_Point"
+          },
+          "toMapping": {
+            "fieldName": "End_Point"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:2"
+          },
+          "tableName": "within.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "Start_Point"
+          },
+          "toMapping": {
+            "fieldName": "End_Point"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:1"
+          },
+          "tableName": "touches.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:18"
+              },
+              "fieldName": "Rel_Position"
+            }
+          ],
+          "fromMapping": {
+            "fieldName": "StartID"
+          },
+          "toMapping": {
+            "fieldName": "EndID"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:7"
+          },
+          "tableName": "distances.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "distance_between",
+              "property": {
+                "$ref": "#p:23"
+              }
+            },
+            {
+              "fieldName": "spatial_relation",
+              "property": {
+                "$ref": "#p:24"
+              }
+            }
+          ],
+          "fromMapping": {
+            "fieldName": "ID_A"
+          },
+          "toMapping": {
+            "fieldName": "ID_B"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:8"
+          },
+          "tableName": "distances.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "distance_between",
+              "property": {
+                "$ref": "#p:25"
+              }
+            },
+            {
+              "fieldName": "spatial_relation",
+              "property": {
+                "$ref": "#p:26"
+              }
+            }
+          ],
+          "fromMapping": {
+            "fieldName": "ID_A"
+          },
+          "toMapping": {
+            "fieldName": "ID_B"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:9"
+          },
+          "tableName": "distances.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "distance_between",
+              "property": {
+                "$ref": "#p:27"
+              }
+            },
+            {
+              "fieldName": "spatial_relation",
+              "property": {
+                "$ref": "#p:28"
+              }
+            }
+          ],
+          "fromMapping": {
+            "fieldName": "ID_A"
+          },
+          "toMapping": {
+            "fieldName": "ID_B"
+          }
+        }
+      ]
+    },
+    "configurations": {
+      "idsToIgnore": []
+    }
+  }
+}
