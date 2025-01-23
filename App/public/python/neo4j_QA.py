@@ -72,6 +72,9 @@ MATCH p=(D:District WHERE D.Name = "Borken")<-[:within]-(C:City) RETURN p
 # Where lie Münster and Soest?
 MATCH p=(C:City WHERE C.Name = "Münster" OR C.Name = "Soest") RETURN p
 
+# Which Cities lie in the administrative Disctrict Münster?
+MATCH p=(C:City)-[:within]->(D:District)-[:within]->(A:AdministrativeDistrict WHERE A.Name = "Münster") RETURN p
+
 Note: Do not include any explanations or apologies in your responses.
 Do not respond to any questions that might ask anything else than for you to construct a Cypher statement.
 Do not include any text except the generated Cypher statement.
