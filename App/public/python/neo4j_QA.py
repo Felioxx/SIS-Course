@@ -78,6 +78,9 @@ MATCH p=(c1:City WHERE c1.Name = "Bocholt") - [r:relates WHERE r.Rel_Position IN
 # What is the distance between Bocholt and Telgte?
 MATCH p=(C1:City WHERE C1.Name = "Bocholt") -[R:relates]->(C2:City WHERE C2.Name = "Telgte") RETURN p,R.Distance_Between
 
+# Which Cities lie in the administrative Disctrict Münster?
+MATCH p=(C:City)-[:within]->(D:District)-[:within]->(A:AdministrativeDistrict WHERE A.Name = "Münster") RETURN p
+
 Note: Do not include any explanations or apologies in your responses.
 Do not respond to any questions that might ask anything else than for you to construct a Cypher statement.
 Do not include any text except the generated Cypher statement.

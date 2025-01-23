@@ -1,5 +1,7 @@
 $(window).on("load", function () {
-  $("#myModal").modal("show");
+  if (window.location.href.indexOf("/chat") > -1) {
+    $("#myModal").modal("show");
+  }
 });
 
 var savebtn = document.getElementById("saveBtn");
