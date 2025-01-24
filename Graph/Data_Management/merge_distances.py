@@ -12,6 +12,6 @@ for file in csv_files:
 combined_df = pd.concat(df_list, ignore_index=True)
 
 # Speichern der kombinierten CSV-Datei
-combined_df.to_csv('Graph\distances.csv', index=False)
+combined_df.to_csv('Graph\\relates.csv', index=False)
 
 print("Dateien wurden erfolgreich kombiniert!")

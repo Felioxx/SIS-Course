@@ -1,4 +1,4 @@
-,administrativeDistrictA,administrativeDistrictB,distance_between,spatial_relation
+Id,ID_A,ID_B,distance_between,spatial_relation
 0,D1,D1,0.0,northern
 1,D1,D2,40339.774066380975,western
 2,D1,D3,0.0,southern
