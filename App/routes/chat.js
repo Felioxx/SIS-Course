@@ -31,6 +31,7 @@ router.post("/", function (req, res, next) {
   process.stdout.on("data", function (data) {
     console.log(`stdout: ${data}`);
     res.send(data.toString());
+    process.stdout.removeAllListeners("data");
   });
 
   // Capture and log stderr data
@@ -43,5 +44,11 @@ router.post("/", function (req, res, next) {
     console.log(`Child process exited with code ${code}`);
   });
 });
+
+function onDataHandler(data) {
+  console.log(`stdout: ${data}`);
+  res.send(data.toString());
+  process.stdout.removeListener("data", onDataHandler);
+}
 
 module.exports = router;

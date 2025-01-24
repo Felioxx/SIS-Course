@@ -823,7 +823,7 @@
             ]
           },
           {
-            "name": "distances.csv",
+            "name": "relates.csv",
             "expanded": true,
             "fields": [
               {
@@ -1110,21 +1110,21 @@
         },
         {
           "relationship": {
-            "$ref": "#r:7"
+            "$ref": "#r:9"
           },
-          "tableName": "distances.csv",
+          "tableName": "relates.csv",
           "propertyMappings": [
             {
-              "fieldName": "distance_between",
               "property": {
-                "$ref": "#p:23"
-              }
+                "$ref": "#p:27"
+              },
+              "fieldName": "distance_between"
             },
             {
-              "fieldName": "spatial_relation",
               "property": {
-                "$ref": "#p:24"
-              }
+                "$ref": "#p:28"
+              },
+              "fieldName": "spatial_relation"
             }
           ],
           "fromMapping": {
@@ -1138,19 +1138,19 @@
           "relationship": {
             "$ref": "#r:8"
           },
-          "tableName": "distances.csv",
+          "tableName": "relates.csv",
           "propertyMappings": [
             {
-              "fieldName": "distance_between",
               "property": {
                 "$ref": "#p:25"
-              }
+              },
+              "fieldName": "distance_between"
             },
             {
-              "fieldName": "spatial_relation",
               "property": {
                 "$ref": "#p:26"
-              }
+              },
+              "fieldName": "spatial_relation"
             }
           ],
           "fromMapping": {
@@ -1162,21 +1162,21 @@
         },
         {
           "relationship": {
-            "$ref": "#r:9"
+            "$ref": "#r:7"
           },
-          "tableName": "distances.csv",
+          "tableName": "relates.csv",
           "propertyMappings": [
             {
-              "fieldName": "distance_between",
               "property": {
-                "$ref": "#p:27"
-              }
+                "$ref": "#p:23"
+              },
+              "fieldName": "distance_between"
             },
             {
-              "fieldName": "spatial_relation",
               "property": {
-                "$ref": "#p:28"
-              }
+                "$ref": "#p:24"
+              },
+              "fieldName": "spatial_relation"
             }
           ],
           "fromMapping": {
