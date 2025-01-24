@@ -19,9 +19,10 @@ Instructions:
 Never use the ID attribute in the answer sentence.
 Use only the provided relationship types and properties in the schema.
 Do not use any other relationship types or properties that are not provided.
-Use the following examples for few shot learning.
+Use the unit km insteat of meters in your answer.
 All questions are in utf-8 encoded.
 Always return the whole graph (RETURN p) in the Cypher statement.
+Use the following examples for few shot learning.
 
 Schema:
 {schema}
@@ -80,6 +81,12 @@ MATCH p=(C1:City WHERE C1.Name = "Bocholt") -[R:relates]->(C2:City WHERE C2.Name
 
 # Which Cities lie in the administrative Disctrict Münster?
 MATCH p=(C:City)-[:within]->(D:District)-[:within]->(A:AdministrativeDistrict WHERE A.Name = "Münster") RETURN p
+
+# How does Münster relate to Selm?
+MATCH p=(C1:City WHERE C1.Name = "Münster") -[R:relates]->(C2:City WHERE C2.Name = "Selm") RETURN p
+
+# What's the relative position of Münster an Selm?
+MATCH p=(C1:City WHERE C1.Name = "Münster") -[R:relates]->(C2:City WHERE C2.Name = "Selm") RETURN p
 
 Note: Do not include any explanations or apologies in your responses.
 Do not respond to any questions that might ask anything else than for you to construct a Cypher statement.
