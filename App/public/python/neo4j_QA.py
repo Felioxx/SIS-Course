@@ -11,8 +11,7 @@ import re
 
 from langchain.prompts.prompt import PromptTemplate
 
-#Always return the IDs of all used entities in the context in two separate arrays named 'questionIDs' and 'answerIDs'.
-
+# Prompt for Cypher generation with few shot learning examples
 CYPHER_GENERATION_TEMPLATE = """
 Task:Generate Cypher statement to query a graph database and include the IDs of all the nodes which are used in the question and the answer as well as the asked properties from the user.
 Instructions:
@@ -98,6 +97,7 @@ CYPHER_GENERATION_PROMPT = PromptTemplate(
     input_variables=["schema", "question"], template=CYPHER_GENERATION_TEMPLATE
 )
 
+# Neo4j connection
 url = "neo4j+ssc://f02e0524.databases.neo4j.io:7687"
 username = "neo4j"
 password = "w60PF-SK2gGIlDII6zZMw8XMo67mqIFSrPU54_E3AU4"
@@ -108,8 +108,7 @@ graph = Neo4jGraph(
     password=password
 )
 
-from neo4j import GraphDatabase
-
+# User Input for OpenAI API Key
 openAiKey = sys.argv[2]
 os.environ["OPENAI_API_KEY"] = openAiKey
 
@@ -128,20 +127,14 @@ chain = GraphCypherQAChain.from_llm(
 async def handle_request(input_data):
     try:
         result = await chain.ainvoke(input_data)
-        # Process result
         return result
     except:
+        # Error handling
         return {"result": "An error occurred while processing the request. Maybe the given API key is not valid." }
 
+# User Input for the question
 question = sys.argv[1]
 response = asyncio.run(handle_request(question))
 
-# Entferne ANSI-Codes und andere Debug-Ausgaben
-#response_str = str(response)
-#cleaned_response = re.sub(r'\x1b\[.*?m', '', response_str)  # Entfernt ANSI-Codes
-#cleaned_response = cleaned_response.split("\n")[-1]  # Nimm nur die letzte relevante Zeile (JSON)
-
 json_response = json.dumps(response, indent=2)  # Convert to JSON format with indentation
 print(json_response)
-#result = response.get("answer")
-#print("Ergebnis aus der Neo4j-Datenbank:", len(result))

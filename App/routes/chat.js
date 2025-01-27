@@ -11,15 +11,10 @@ router.post("/", function (req, res, next) {
   console.log("question:" + question);
   var openAiKey = req.body.openAiKey;
   console.log("key:" + openAiKey);
-  // Use child_process.spawn method from
-  // child_process module and assign it
-  // to variable spawn
+
   var spawn = require("child_process").spawn;
 
-  // Parameters passed in spawn -
-  // 1. type_of_script
-  // 2. list containing Path of the script
-  //    and arguments for the script
+  // Execute the python script with the user's question and OpenAI key
   var process = spawn("python", [
     "public/python/neo4j_QA.py",
     question,
