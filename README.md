@@ -92,26 +92,27 @@ Together with all these options, the user has the goal, to build the best possib
 ### Questions answered by the application:
 
 #### regarding location
-- Where lies <city/district/administrative_district>?
+- Where lies (city/district/administrative district)?
 
 #### regarding federal levels
-- Which cities lie in the district of <district>?
-- Which cities/districts lie in the administrative district of <administrative_district>?
+- Which cities lie in the district of (district)?
+- Which cities/districts lie in the administrative district of (administrative district)?
 
 #### regarding addtibutes
-- What is the size of <city/districts/administrative_district>?
+- What is the size of (city/districts/administrative district)?
 
 #### regarding relations between entities
 ##### distances
-- What is the distance between <city> and <city>?
-- What is the distance between <district> and <district>?
-- What is the distance between <administrative_district> and <administrative_district>?
+- What is the distance between (city) and (city)?
+- What is the distance between (district) and (district)?
+- What is the distance between (administrative district) and (administrative district)?
 ##### cardinal directions
-- Show me every city that lies western of <city>?
-- Show me every district that lies western of <district>?
-- Show me every administrative district that lies western of <administrative_district>?
+- Show me every city that lies western of (city)?
+- Show me every district that lies western of (district)?
+- Show me every administrative district that lies western of (administrative district)?
 ##### neighbors
-- Show me all Neighbors of <city/district/administrative_district>?
+- Show me all Neighbors of (city/district/administrative district)?
+<p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
 <br />
 
 ### Built With
