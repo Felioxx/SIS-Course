@@ -84,6 +84,8 @@ It consists of multiple components, which will be explained in the following:
 <br />
 <br />
 <p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
+<br />
+
 
 ### Questions answered by the application:
 
@@ -94,7 +96,7 @@ It consists of multiple components, which will be explained in the following:
 - Which cities lie in the district of (district)?
 - Which cities/districts lie in the administrative district of (administrative district)?
 
-#### regarding addtibutes
+#### regarding attributes
 - What is the size of (city/districts/administrative district)?
 
 #### regarding relations between entities
@@ -106,6 +108,9 @@ It consists of multiple components, which will be explained in the following:
 - Show me every city that lies western of (city)?
 - Show me every district that lies western of (district)?
 - Show me every administrative district that lies western of (administrative district)?
+- In which direction lies (city) from (city)?
+- In which direction lies (district) from (district)?
+- In which direction lies (administrative district) from (adnministrative district)?
 ##### neighbors
 - Show me all Neighbors of (city/district/administrative district)?
 <p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
@@ -113,123 +118,61 @@ It consists of multiple components, which will be explained in the following:
 
 ### Built With
 
-* [![JavaScript][JavaScript.com]][JavaScript-url]
+* [![Python][Python.com]][Python-url]
 * [![nodeJS][nodeJS.com]][nodeJS-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
-* [![pixi][pixi.com]][pixi-url]
-* [![StackOverflow][StackOverflow.com]][StackOverflow-url]
+* [![neo4j][neo4j.com]][neo4j-url]
+* [![LangChain][LangChain.com]][LangChain-url]
+* [![OpenAI][OpenAI.com]][OpenAI-url]
 
 <p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
 
 
 
 <!-- GETTING STARTED -->
-## Getting Started ✇ミ
-
-### Prerequisites
-
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-* http-server
-  ```sh
-  npm install --global http-server
-  ```
+## Getting Started
 
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Lorano and Laxeros07/windpark-simulator.git
+   https://github.com/Felioxx/SIS-Course
    ```
-2. Install NPM packages in **both** the root directory and the
-`server` directory.
+2. Install NPM packages in the root directory.
    ```sh
    npm install
    ```
-3. You can use the following commands in the root directory to build the client apps. The
-server does not require compilation.
+3. Run the application
    ```sh
-   npm run build
+   npm start
    ```
-   or
-   ```sh
-   npm run watch
-   ```
-
-### Running 🏃‍♀️𒈱
-1. Start the server by running 
-   ```sh
-   npm run start
-   ```
-   in the `server` directory.
-
-2. Start the frontend by running
-   ```sh
-   http-server -c-1
-   ```
-   in the root directory.
-
-The clients, in the root directory, are:
-
-- `city.html`: Presents the city map, to be projected over the exhibition table.
-- `dashboard.html`: Shows the auxiliary touchscreen dashboard that displays variables and goals,
-  and allows selecting Power-Ups.
-- `editor.html`: An editor that pushes changes to the server. Note that it doesn't read updates from
-  the server, so it's not possible to use multiple editors simulatenously. It's only meant for
-  use during development.
-
-- `index.html`: This is a standalone browser version of the software.
-<p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
-
-### Configuration
-
-The main configuration file is `config.yml`. The server has to be reloaded after any changes.
-Clients get the configuration from the server through the http API and have to be reloaded after
-the server to take any changes.
-
-The .env file has other configuration keys that affect the environment.
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Usage goals
+#### Importance of the application
+- Works with the “complete” geometries
+- Has knowledge about the relations
+- Visualization on map
+- Easy to use (less complex than Google Maps f.e.)
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+#### Target users
+- Local government workers
+- Citizens
+- People who struggle with current Map services
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+#### Benefits for the users
+- Easy useage
+- Precise visualization
+- Correct distances
+- Explanation of the federal system
 
-<p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
-
-## Server APIs
-
-The server has both an HTTP and a WebSocket API. Their specifications are:
-
-- http: `specs/openapi.yaml`
-- ws: `specs/asyncapi.yaml`
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 <p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
+
 
 <!-- LICENSE -->
 ## License
-Copyright (c) 2021 IMAGINARY gGmbH
-Licensed under the MIT license (see LICENSE)
-Supported by Futurium gGmbH
+Copyright (c) 2025 Spacey GmbH
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
@@ -239,20 +182,16 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Contact
 
 Eva Langstein - elangste@uni-muenster.de
+
 Anne Staskiewicz - anne.staskiewicz@uni-muenster.de
 
-Project Link: [https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator](https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator)
+Felix Disselkamp - fdisselk@uni-muenster.de
 
-<p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
+##### Project Link: [https://github.com/Felioxx/SIS-Course](https://github.com/Felioxx/SIS-Course)
 
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+<p align="right">(<a href="https://github.com/Felioxx/SIS-Course/README.md#">back to top</a>)</p>
 
-* []()
-* []()
-* []()
 
-<p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
 
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
@@ -296,4 +235,6 @@ Project Link: [https://github.com/Bachelor-thesis-windpark-simulator/windpark-si
 [pixi.com]: https://img.shields.io/badge/PIXI-FF10F0?style=for-the-badge&logo=pixi&logoColor=white
 [nodeJS-url]: [https://pixijs.com/](https://nodejs.org/en)
 [nodeJS.com]: https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white
+[neo4j.com]:
+[neo4j-url]: 
 
