@@ -18,24 +18,15 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="###Questions answered by the application:">Example Questions</a></li>
+    <li><a href="#built-with">Built With</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#running-%EF%B8%8F%F0%92%88%B1">Running</a></li>
-        <li><a href="#configuaration">Configuration</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#server-apis">Server APIs</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -118,6 +109,7 @@ It consists of multiple components, which will be explained in the following:
 ### Built With
 
 * [![JavaScript][JavaScript.com]][JavaScript-url]
+* [![python][python.com]][python-url]
 * [![nodeJS][nodeJS.com]][nodeJS-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
@@ -240,4 +232,5 @@ Felix Disselkamp - fdisselk@uni-muenster.de
 [nodeJS.com]: https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white
 [neo4j.com]: https://img.shields.io/badge/neo4j-4581C3?style=for-the-badge&logo=neo4j&logoColor=white
 [neo4j-url]: https://neo4j.com/
-
+[python.com]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
+[python-url]: https://www.python.org/
