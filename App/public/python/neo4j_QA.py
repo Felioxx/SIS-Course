@@ -27,6 +27,11 @@ Schema:
 {schema}
 
 Cypher examples:
+# In which administrative district lies Siegburg?
+MATCH p=(C:City WHERE C.Name = "Siegburg")-[:within]->(D:District) -[:within]->(A:AdministrativeDistrict) RETURN P, C.Name AS City, D.Name AS District, A.Name AS AdministrativeDistrict
+# Repeat to emphasize:
+MATCH p=(C:City WHERE C.Name = "Siegburg")-[:within]->(D:District) -[:within]->(A:AdministrativeDistrict) RETURN p, C.Name AS City, D.Name AS District, A.Name AS AdministrativeDistrict
+
 # Which cities lie left of Münster?
 MATCH p=(C:City WHERE C.Name = "Münster") -[T:touches WHERE T.`Rel_Position`in ["western","southwestern","northwestern"]]->(:City) RETURN p
 
@@ -53,9 +58,6 @@ MATCH p=(A:AdministrativeDistrict WHERE A.Name = "Arnsberg")
 # Which districts lie next to Köln?
 MATCH p=(D:District WHERE D.Name = "Köln")
         -[T:touches]->(:District) RETURN p
-
-# In which administrative District lies Siegburg?
-MATCH p=(C:City WHERE C.Name = "Siegburg")-[:within]->(D:District) -[:within]->(A:AdministrativeDistrict) RETURN P
 
 # How large is Köln?
 MATCH p=(C:City WHERE C.Name = "Köln") RETURN p
