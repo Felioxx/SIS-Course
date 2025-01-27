@@ -8,11 +8,11 @@
         <br />
    made <a href="https://www.uni-muenster.de/Geoinformatics/">@ifgi - UNI MUENSTER</a> 🌍
     <br />
-    <a href="https://github.com/Laxeros07/Bachelor-thesis-windpark-simulator"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Felioxx/SIS-Course/tree/main/App"><strong>Explore the docs »</strong></a>
   </p>
 </div>
 <p align="center">
--- ☁️ ✇ - ✇ - ✇ ☁️ --
+-- ⭔ ♞ - ❀ - ♞ ⭔ --
 </p>
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -44,17 +44,19 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-A collaborative and interactive wind farm simulator. This project was done during the summer semester 2023 at ifgi.
+This project was done during the winter term 2024/25 at ifgi Münster as part of the Spatial Information Search Course of the Master in Geoinformatics.
 
-This project is based on the existing [future mobility project from Imaginary ](<[url](https://github.com/IMAGINARY/future-mobility)>) and adapted it towards the aim of this project.
-It consists of multiple components, which will be explained in the following.
+In this project of a collaborative and interactive Web-Application was implemented. The App includes a Chatbot which is linked to a leaflet map. It is knowledged about the geometries and the federal relations of Northrhine-Westphalia. 
+
+It consists of multiple components, which will be explained in the following:
+ 
 <br />
 <div class="container">
       <div class="image">
-        <img align=left width="50%" alt="Bildschirmfoto 2023-08-12 um 19 41 54" src="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/assets/90246149/6c4e63f2-ba9b-41d5-b408-676322ac077f">
+        <img align=left width="30%"  src="https://github.com/Felioxx/SIS-Course/blob/main/App/public/images/screenshot_apikey.png?raw=true">
       </div>
       <div class="text">
-        <p align=justify><a>The website allows users to arrange a 16x16 grid with certain areas. These areas include green spaces as water areas and parks, infrastructure as roads and residentials and windturbines of two different sizes. The initial layout is all parks as you can see in the image.</a>
+        <p align=justify><a> In order to use the chatbot, one has to enter a purchased </a> <a href="https://openai.com/index/openai-api/">Open AI API Key</a> <a>            The field for entering the  key opens on loading the /chat page.</a>
           <p>
       </div>
     </div>
@@ -63,21 +65,14 @@ It consists of multiple components, which will be explained in the following.
 <br />
 <br />
 <br />
+<br />
+<br />
 <div class="container">
   <div class="image">
-    <img align=left width="30%" src="https://github.com/ifgiscope/wind-turbines/assets/46593824/a94634a1-71ac-4406-a474-74ff8e88c408">
+    <img align=left width="60%" src="https://github.com/Felioxx/SIS-Course/blob/main/App/public/images/Screenshot_chat.png?raw=true">
   </div>
   <div class="text">
-    <p align=justify><a>With the buttons on the right the user can select an area type and then change tiles by clicking on them. Right to the grid are smileys that display how satisfied certain conditions are, the amount of green spaces, the amount of wind turbines and the distances towards one another.</a>
-      <p>
-  </div>
-</div> 
-<div class="container">
-  <div class="image">
-    <img align=left width="30%" src="https://github.com/ifgiscope/wind-turbines/assets/46593824/6039f364-5388-416a-9d72-7594a5a0a240">
-  </div>
-  <div class="text">
-    <p align=justify><a>Below the smileys are acteurs displayed, that tell, when some conditions are true. They tell the user what is missing in the current layout. On example for this are citizens that say there is not enoug elecrticity. Therefore, there needs to be build more wind turbines.</a>
+    <p align=justify><a>On the left side of the page is the chat where you can asks questions similar to our listet examples. After asking the question the chatbot takes some time to generate the answer. When the answer is computet, the named entities in question and answer are visualized on the right side on the leaflet map.</a>
       <p>
   </div>
 </div> 
@@ -85,9 +80,10 @@ It consists of multiple components, which will be explained in the following.
 <br />
 <br />
 <br />
-Together with all these options, the user has the goal, to build the best possible layout to fulfill all goals and leave averyone involved satisfied.
+<br />
+<br />
+<br />
 <p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
-<br />
 
 ### Questions answered by the application:
 
