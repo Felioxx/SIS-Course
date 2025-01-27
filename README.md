@@ -82,7 +82,6 @@ It consists of multiple components, which will be explained in the following:
 <br />
 <br />
 <br />
-<br />
 <p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
 <br />
 
@@ -141,12 +140,15 @@ It consists of multiple components, which will be explained in the following:
    ```
 2. Install NPM packages in the root directory.
    ```sh
+   cd App
    npm install
    ```
 3. Run the application
    ```sh
    npm start
    ```
+<p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
+
 
 <!-- USAGE EXAMPLES -->
 ## Usage goals
@@ -190,7 +192,7 @@ Felix Disselkamp - fdisselk@uni-muenster.de
 
 ##### Project Link: [https://github.com/Felioxx/SIS-Course](https://github.com/Felioxx/SIS-Course)
 
-<p align="right">(<a href="https://github.com/Felioxx/SIS-Course/README.md#">back to top</a>)</p>
+<p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
 
 
 
