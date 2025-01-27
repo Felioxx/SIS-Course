@@ -3,8 +3,8 @@ import csv
 import pandas as pd
 
 df_cities = pd.read_csv("Graph\Data_Management\cities.csv")
-df_id_cities = pd.read_csv("Graph\id_districts.csv")
-df_population = pd.read_csv("Graph\population.csv")
+df_id_cities = pd.read_csv("Graph\Data_Management\id_districts.csv")
+df_population = pd.read_csv("Graph\Data_Management\population.csv")
 print(df_id_cities)
 df_population = df_population.drop(["pop_male", "pop_female"], axis=1)
 
