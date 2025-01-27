@@ -87,8 +87,32 @@ It consists of multiple components, which will be explained in the following.
 <br />
 Together with all these options, the user has the goal, to build the best possible layout to fulfill all goals and leave averyone involved satisfied.
 <p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
+<br />
 
+### Questions answered by the application:
 
+#### regarding location
+- Where lies <city/district/administrative_district>?
+
+#### regarding federal levels
+- Which cities lie in the district of <district>?
+- Which cities/districts lie in the administrative district of <administrative_district>?
+
+#### regarding addtibutes
+- What is the size of <city/districts/administrative_district>?
+
+#### regarding relations between entities
+##### distances
+- What is the distance between <city> and <city>?
+- What is the distance between <district> and <district>?
+- What is the distance between <administrative_district> and <administrative_district>?
+##### cardinal directions
+- Show me every city that lies western of <city>?
+- Show me every district that lies western of <district>?
+- Show me every administrative district that lies western of <administrative_district>?
+##### neighbors
+- Show me all Neighbors of <city/district/administrative_district>?
+<br />
 
 ### Built With
 
