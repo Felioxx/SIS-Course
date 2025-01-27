@@ -118,12 +118,13 @@ It consists of multiple components, which will be explained in the following:
 
 ### Built With
 
-* [![Python][Python.com]][Python-url]
+* [![JavaScript][JavaScript.com]][JavaScript-url]
 * [![nodeJS][nodeJS.com]][nodeJS-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* [![JQuery][JQuery.com]][JQuery-url]
 * [![neo4j][neo4j.com]][neo4j-url]
-* [![LangChain][LangChain.com]][LangChain-url]
-* [![OpenAI][OpenAI.com]][OpenAI-url]
+* [![openAi][openAi.com]][openAi-url]
+* [![StackOverflow][StackOverflow.com]][StackOverflow-url]
 
 <p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
 
@@ -231,10 +232,10 @@ Felix Disselkamp - fdisselk@uni-muenster.de
 [JavaScript-url]: https://www.javascript.com/
 [StackOverflow-url]: https://stackoverflow.com/
 [StackOverflow.com]: https://img.shields.io/badge/-Stackoverflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white
-[pixi-url]: https://pixijs.com/
-[pixi.com]: https://img.shields.io/badge/PIXI-FF10F0?style=for-the-badge&logo=pixi&logoColor=white
+[openAi-url]: https://openai.com/
+[openAi.com]: https://img.shields.io/badge/-OpenAI%20API-eee?style=for-the-badge&logo=openai&logoColor=412991
 [nodeJS-url]: [https://pixijs.com/](https://nodejs.org/en)
 [nodeJS.com]: https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white
-[neo4j.com]:
-[neo4j-url]: 
+[neo4j.com]: https://img.shields.io/badge/neo4j-4581C3?style=for-the-badge&logo=neo4j&logoColor=white
+[neo4j-url]: https://neo4j.com/
 
