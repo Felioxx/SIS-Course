@@ -19,7 +19,6 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
-    <li><a href="###Questions answered by the application:">Example Questions</a></li>
     <li><a href="#built-with">Built With</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -77,7 +76,7 @@ It consists of multiple components, which will be explained in the following:
 <br />
 
 
-### Questions answered by the application:
+## Questions answered by the application
 
 #### regarding location
 - Where lies (city/district/administrative district)?
