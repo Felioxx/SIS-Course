@@ -37,7 +37,7 @@
 ## About The Project
 This project was done during the winter term 2024/25 at ifgi Münster as part of the Spatial Information Search Course of the Master in Geoinformatics.
 
-In this project of a collaborative and interactive Web-Application was implemented. The App includes a Chatbot which is linked to a leaflet map. It is knowledged about the geometries and the federal relations of Northrhine-Westphalia. 
+In this project a collaborative and interactive Web-Application was implemented. The App includes a Chatbot which is linked to a leaflet map. It is knowledged about the geometries and the federal relations of Northrhine-Westphalia. 
 
 It consists of multiple components, which will be explained in the following:
  
