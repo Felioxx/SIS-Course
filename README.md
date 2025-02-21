@@ -103,7 +103,7 @@ It consists of multiple components, which will be explained in the following:
 - In which direction lies (administrative district) from (adnministrative district)?
 ##### neighbors
 - Show me all Neighbors of (city/district/administrative district)?
-<p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
+<p align="right">(<a href="https://github.com/Felioxx/SIS-Course?tab=readme-ov-file#chat-with-nrw">back to top</a>)</p>
 <br />
 
 ### Built With
@@ -117,7 +117,7 @@ It consists of multiple components, which will be explained in the following:
 * [![openAi][openAi.com]][openAi-url]
 * [![StackOverflow][StackOverflow.com]][StackOverflow-url]
 
-<p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
+<p align="right">(<a href="https://github.com/Felioxx/SIS-Course?tab=readme-ov-file#chat-with-nrw">back to top</a>)</p>
 
 
 
@@ -139,7 +139,7 @@ It consists of multiple components, which will be explained in the following:
    ```sh
    npm start
    ```
-<p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
+<p align="right">(<a href="https://github.com/Felioxx/SIS-Course?tab=readme-ov-file#chat-with-nrw">back to top</a>)</p>
 
 
 <!-- USAGE EXAMPLES -->
@@ -162,7 +162,7 @@ It consists of multiple components, which will be explained in the following:
 - Explanation of the federal system
 
 
-<p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
+<p align="right">(<a href="https://github.com/Felioxx/SIS-Course?tab=readme-ov-file#chat-with-nrw">back to top</a>)</p>
 
 
 <!-- LICENSE -->
@@ -171,7 +171,7 @@ Copyright (c) 2025 Spacey GmbH
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
+<p align="right">(<a href="https://github.com/Felioxx/SIS-Course?tab=readme-ov-file#chat-with-nrw">back to top</a>)</p>
 
 <!-- CONTACT -->
 ## Contact
@@ -184,7 +184,7 @@ Felix Disselkamp - fdisselk@uni-muenster.de
 
 ##### Project Link: [https://github.com/Felioxx/SIS-Course](https://github.com/Felioxx/SIS-Course)
 
-<p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
+<p align="right">(<a href="https://github.com/Felioxx/SIS-Course?tab=readme-ov-file#chat-with-nrw">back to top</a>)</p>
 
 
 
