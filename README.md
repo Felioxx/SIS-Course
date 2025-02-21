@@ -73,7 +73,7 @@ It consists of multiple components, which will be explained in the following:
 <br />
 <br />
 <br />
-<p align="right">(<a href="https://github.com/Bachelor-thesis-windpark-simulator/windpark-simulator/blob/main/README.md#windscope">back to top</a>)</p>
+<p align="right">(<a href="https://github.com/Felioxx/SIS-Course?tab=readme-ov-file#chat-with-nrw">back to top</a>)</p>
 <br />
 
 
